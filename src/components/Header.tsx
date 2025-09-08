@@ -1,26 +1,30 @@
-import { Link } from "solid-app-router";
+// src/components/Header.tsx
 import { createSignal } from "solid-js";
+import { A } from "@solidjs/router";
 
 export default function Header() {
   const [open, setOpen] = createSignal(false);
+
   return (
     <header class="bg-white shadow-md">
       <div class="container mx-auto px-4 py-4 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <Link href="/" class="text-xl font-bold text-brand">
+          <A href="/" class="text-xl font-bold text-brand">
             NGO Sikkim
-          </Link>
+          </A>
         </div>
+
         <nav class="hidden md:flex gap-6 items-center">
-          <Link href="/">Home</Link>
-          <Link href="/about">About Us</Link>
-          <Link href="/projects">Our Work</Link>
-          <Link href="/gallery">Gallery</Link>
-          <Link href="/contact">Contact</Link>
-          <a class="bg-brand text-white px-4 py-2 rounded" href="#">
+          <A href="/">Home</A>
+          <A href="/about">About Us</A>
+          <A href="/projects">Our Work</A>
+          <A href="/gallery">Gallery</A>
+          <A href="/contact">Contact</A>
+          <A href="#" class="bg-brand text-white px-4 py-2 rounded">
             Donate
-          </a>
+          </A>
         </nav>
+
         <button
           class="md:hidden"
           onClick={() => setOpen(!open())}
@@ -29,17 +33,18 @@ export default function Header() {
           ☰
         </button>
       </div>
+
       {open() && (
         <div class="md:hidden border-t">
           <div class="flex flex-col px-4 py-2">
-            <Link href="/">Home</Link>
-            <Link href="/about">About Us</Link>
-            <Link href="/projects">Our Work</Link>
-            <Link href="/gallery">Gallery</Link>
-            <Link href="/contact">Contact</Link>
-            <a class="bg-brand text-white px-4 py-2 rounded mt-2" href="#">
+            <A href="/">Home</A>
+            <A href="/about">About Us</A>
+            <A href="/projects">Our Work</A>
+            <A href="/gallery">Gallery</A>
+            <A href="/contact">Contact</A>
+            <A href="#" class="bg-brand text-white px-4 py-2 rounded mt-2">
               Donate
-            </a>
+            </A>
           </div>
         </div>
       )}

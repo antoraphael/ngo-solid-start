@@ -1,4 +1,4 @@
-import { Link } from "solid-app-router";
+import { A } from "@solidjs/router";
 
 export default function ProjectCard(props: {
   id: string;
@@ -12,9 +12,9 @@ export default function ProjectCard(props: {
       <div class="p-4">
         <h3 class="font-semibold">{props.title}</h3>
         <p class="text-sm mb-3">{props.excerpt}</p>
-        <Link href={`/projects/${props.id}`} class="text-brand">
+        <A href={`/projects/${props.id}`} class="text-brand">
           Read more
-        </Link>
+        </A>
       </div>
     </div>
   );
