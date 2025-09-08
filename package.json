@@ -9,10 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "solid-app-router": "^0.4.2",
     "solid-js": "^1.9.8"
   },
   "devDependencies": {
     "@types/node": "^24.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.35.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-solid": "^0.14.5",
+    "eslint-plugin-unused-imports": "^4.2.0",
     "typescript": "~5.8.3",
     "vite": "^7.1.5",
     "vite-plugin-solid": "^2.11.8"
