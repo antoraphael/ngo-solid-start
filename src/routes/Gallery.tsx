@@ -1,73 +1,46 @@
-// src/routes/Gallery.tsx
-import { createSignal, For } from "solid-js";
+import { createSignal } from "solid-js";
 import GalleryGrid from "../components/GalleryGrid";
+import { PLACEHOLDER_IMG } from "../lib/constants";
 
-type GalleryItem = {
-  id: string;
-  src: string;
-  title?: string;
-  category: string;
-};
-
-const ITEMS: GalleryItem[] = [
+const ITEMS = [
   {
     id: "g1",
-    src: "/src/assets/gallery-1.jpg",
+    src: PLACEHOLDER_IMG,
     title: "Children Learning",
     category: "Education",
   },
-  {
-    id: "g2",
-    src: "/src/assets/gallery-2.jpg",
-    title: "Health Camp",
-    category: "Health",
-  },
+  { id: "g2", src: PLACEHOLDER_IMG, title: "Health Camp", category: "Health" },
   {
     id: "g3",
-    src: "/src/assets/gallery-3.jpg",
+    src: PLACEHOLDER_IMG,
     title: "Tree Plantation",
     category: "Environment",
-  },
-  {
-    id: "g4",
-    src: "/src/assets/gallery-4.jpg",
-    title: "Volunteer Day",
-    category: "Volunteer",
-  },
-  {
-    id: "g5",
-    src: "/src/assets/gallery-5.jpg",
-    title: "Awareness Session",
-    category: "Health",
   },
 ];
 
 export default function Gallery() {
-  const [filter, setFilter] = createSignal<string>("All");
-
-  const categories = Array.from(new Set(ITEMS.map((i) => i.category)));
-  categories.unshift("All");
-
+  const [filter, setFilter] = createSignal("");
   return (
     <section class="container mx-auto px-4 py-12">
       <h1 class="text-3xl font-bold mb-6">Gallery</h1>
-
-      <div class="mb-6 flex flex-wrap gap-3">
-        <For each={categories}>
-          {(cat) => (
-            <button
-              class={`px-3 py-1 rounded border ${
-                filter() === cat ? "bg-brand text-white" : ""
-              }`}
-              onClick={() => setFilter(cat)}
-            >
-              {cat}
-            </button>
-          )}
-        </For>
+      <div class="mb-4 flex gap-2">
+        <button onClick={() => setFilter("")} class="px-3 py-1 border rounded">
+          All
+        </button>
+        <button
+          onClick={() => setFilter("Education")}
+          class="px-3 py-1 border rounded"
+        >
+          Education
+        </button>
+        <button
+          onClick={() => setFilter("Health")}
+          class="px-3 py-1 border rounded"
+        >
+          Health
+        </button>
       </div>
-
-      <GalleryGrid items={ITEMS} filter={filter() === "All" ? "" : filter()} />
+      <GalleryGrid items={ITEMS} filter={filter()} />
     </section>
   );
 }

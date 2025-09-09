@@ -1,11 +1,11 @@
+// vite.config.ts
 import { defineConfig } from "vite";
-import solid from "vite-plugin-solid";
+import solidPlugin from "vite-plugin-solid";
 import { resolve } from "path";
 
 export default defineConfig({
-  plugins: [solid()],
-  resolve: {
-    alias: [{ find: "@", replacement: resolve(__dirname, "src") }],
-  },
+  plugins: [solidPlugin()],
+  // no aliasing to keep everything relative imports only
+  server: { port: 5173 },
   build: { target: "esnext" },
 });

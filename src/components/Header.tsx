@@ -10,11 +10,11 @@ export default function Header() {
       <div class="container mx-auto px-4 py-4 flex items-center justify-between">
         <div class="flex items-center gap-3">
           <A href="/" class="text-xl font-bold text-brand">
-            NGO Sikkim
+            YES Foundation
           </A>
         </div>
 
-        <nav class="hidden md:flex gap-6 items-center">
+        <nav class="md:flex gap-6 items-center">
           <A href="/">Home</A>
           <A href="/about">About Us</A>
           <A href="/projects">Our Work</A>

@@ -1,32 +1,21 @@
-import { For } from "solid-js";
+import { PLACEHOLDER_IMG } from "../lib/constants";
 
-type GalleryItem = {
-  id: string;
-  src: string;
-  title?: string;
-  category: string;
-};
-
-export default function GalleryGrid(props: {
-  items: GalleryItem[];
-  filter: string;
-}) {
-  const filtered = () =>
-    props.items.filter((i) => !props.filter || i.category === props.filter);
+export default function GalleryGrid(props: { items: any[]; filter: string }) {
+  const items = props.items.filter(
+    (i) => !props.filter || i.category === props.filter
+  );
 
   return (
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <For each={filtered()}>
-        {(ele) => (
-          <div class="rounded overflow-hidden">
-            <img
-              src={ele.src}
-              alt={ele.title}
-              class="w-full h-40 object-cover"
-            />
-          </div>
-        )}
-      </For>
+      {items.map((ele, i) => (
+        <div class="rounded overflow-hidden">
+          <img
+            src={ele.src || PLACEHOLDER_IMG}
+            alt={ele.title}
+            class="w-full h-40 object-cover"
+          />
+        </div>
+      ))}
     </div>
   );
 }

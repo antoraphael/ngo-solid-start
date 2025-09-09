@@ -1,24 +1,22 @@
+// src/components/Hero.tsx
+import { PLACEHOLDER_IMG } from "../lib/constants";
+
 export default function Hero() {
   return (
-    <section class="relative h-[60vh] bg-gray-100 flex items-center">
-      <div class="container mx-auto px-4 flex items-center gap-8">
-        <div class="w-1/2">
-          <h1 class="text-4xl font-bold mb-4">
-            Working for Sikkim communities
+    <section class="relative h-[400px] md:h-[500px] bg-gray-200">
+      <img
+        src={PLACEHOLDER_IMG}
+        alt="Hero Banner"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+        <div class="text-center text-white">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Empowering Communities in Sikkim
           </h1>
-          <p class="mb-4">
-            We empower vulnerable communities through education, health &
-            environment projects.
-          </p>
-          <a href="/projects" class="bg-brand text-white px-4 py-2 rounded">
-            Our Projects
-          </a>
-        </div>
-        <div class="w-1/2">
-          <div
-            class="h-56 bg-cover bg-center rounded"
-            style={{ "background-image": "url('/src/assets/hero.jpg')" }}
-          />
+          <button class="bg-brand px-6 py-2 rounded shadow">
+            Get Involved
+          </button>
         </div>
       </div>
     </section>

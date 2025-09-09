@@ -11,7 +11,6 @@ import Gallery from "./routes/Gallery";
 import Contact from "./routes/Contact";
 import NotFound from "./routes/NotFound";
 
-// Use the exact prop type the router expects
 function Layout(props: RouteSectionProps) {
   return (
     <div class="min-h-screen flex flex-col">

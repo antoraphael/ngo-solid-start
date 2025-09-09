@@ -74,7 +74,7 @@ export default function Contact() {
 
         <div>
           <h3 class="font-semibold mb-2">Our Office</h3>
-          <p class="mb-2">NGO Sikkim</p>
+          <p class="mb-2">YES Foundation</p>
           <p class="mb-4">Kolokang, Sikkim, India</p>
 
           <div class="w-full h-64 bg-gray-100 rounded overflow-hidden">
