@@ -1,6 +1,7 @@
 // src/routes/Projects.tsx
 import { For, createSignal, createMemo } from "solid-js";
 import ProjectCard from "../components/ProjectCard";
+import { PLACEHOLDER_IMG } from "../lib/constants";
 
 type Project = {
   id: string;
@@ -14,14 +15,14 @@ const initialProjects: Project[] = [
   {
     id: "house-building",
     title: "House Building",
-    img: "/src/assets/proj-1.jpg",
+    img: PLACEHOLDER_IMG,
     excerpt: "Helping families build safe, weatherproof homes.",
     category: "Environment",
   },
   {
     id: "school-support",
     title: "School Support",
-    img: "/src/assets/proj-2.jpg",
+    img: PLACEHOLDER_IMG,
     excerpt:
       "Supplying learning materials and teacher support to rural schools.",
     category: "Education",
@@ -29,7 +30,7 @@ const initialProjects: Project[] = [
   {
     id: "health-camp",
     title: "Health Camp",
-    img: "/src/assets/proj-3.jpg",
+    img: PLACEHOLDER_IMG,
     excerpt: "Periodic medical camps and basic health awareness programs.",
     category: "Health",
   },
