@@ -10,6 +10,10 @@ import ProjectDetail from "./routes/ProjectDetail";
 import Gallery from "./routes/Gallery";
 import Contact from "./routes/Contact";
 import NotFound from "./routes/NotFound";
+import Events from "./routes/Event";
+import Press from "./routes/Press";
+import Team from "./components/Team";
+import Donate from "./routes/Donate";
 
 function Layout(props: RouteSectionProps) {
   return (
@@ -31,6 +35,10 @@ export default function App() {
         <Route path="projects/:id" component={ProjectDetail} />
         <Route path="gallery" component={Gallery} />
         <Route path="contact" component={Contact} />
+        <Route path="events" component={Events} />
+        <Route path="press" component={Press} />
+        <Route path="team" component={Team} />
+        <Route path="donate" component={Donate} />
         <Route path="*" component={NotFound} />
       </Route>
     </>

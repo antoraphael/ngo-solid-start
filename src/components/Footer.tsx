@@ -1,74 +1,108 @@
-// src/components/Footer.tsx
 import { A } from "@solidjs/router";
+import { EVENTS, ORG } from "../lib/content";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const recent = EVENTS.slice(-3).reverse();
+
+  const quickLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Projects", href: "/projects" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Events", href: "/events" },
+    { name: "Press", href: "/press" },
+    { name: "Team", href: "/team" },
+    { name: "Donate", href: "/donate" },
+  ];
+
+  const socials = [
+    { name: "Facebook", href: "#" },
+    { name: "Twitter", href: "#" },
+    { name: "Instagram", href: "#" },
+  ];
 
   return (
-    <footer class="bg-gray-900 text-gray-200 mt-12">
-      <div class="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* NGO description */}
+    <footer class="mt-12 bg-brand-light text-gray-700">
+      <div class="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* About */}
         <div>
-          <h3 class="text-xl font-bold text-white mb-2">NGO Sikkim</h3>
-          <p class="text-sm text-gray-400">
-            Empowering communities in Sikkim through education, health, and
-            sustainable development projects.
+          <h3 class="text-lg font-bold mb-2 text-brand">NGO Sikkim</h3>
+          <p class="text-sm mb-3">{ORG.summary}</p>
+          <p class="text-sm">
+            <strong>Email:</strong>{" "}
+            <a
+              href={`mailto:${ORG.contact.email}`}
+              class="text-brand hover:underline"
+            >
+              {ORG.contact.email}
+            </a>
+          </p>
+          <p class="text-sm">
+            <strong>Phone:</strong>{" "}
+            <a
+              href={`tel:${ORG.contact.phone}`}
+              class="text-brand hover:underline"
+            >
+              {ORG.contact.phone}
+            </a>
           </p>
         </div>
 
-        {/* Quick links */}
+        {/* Quick Links */}
         <div>
-          <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+          <h4 class="font-semibold mb-3 text-brand">Quick Links</h4>
           <ul class="space-y-2 text-sm">
-            <li>
-              <A href="/" class="hover:text-brand">
-                Home
-              </A>
-            </li>
-            <li>
-              <A href="/about" class="hover:text-brand">
-                About Us
-              </A>
-            </li>
-            <li>
-              <A href="/projects" class="hover:text-brand">
-                Projects
-              </A>
-            </li>
-            <li>
-              <A href="/gallery" class="hover:text-brand">
-                Gallery
-              </A>
-            </li>
-            <li>
-              <A href="/contact" class="hover:text-brand">
-                Contact
-              </A>
-            </li>
+            {quickLinks.map((link) => (
+              <li>
+                <A href={link.href} class="hover:text-brand">
+                  {link.name}
+                </A>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Contact info */}
+        {/* Socials */}
         <div>
-          <h4 class="font-semibold text-white mb-3">Contact</h4>
-          <p class="text-sm">📧 info@ngosikkim.org</p>
-          <p class="text-sm">📞 +91 12345 67890</p>
-          <div class="flex gap-3 mt-3">
-            <a href="#" class="hover:text-brand">
-              🌐 Facebook
-            </a>
-            <a href="#" class="hover:text-brand">
-              🐦 Twitter
-            </a>
-            <a href="#" class="hover:text-brand">
-              📷 Instagram
-            </a>
+          <h4 class="font-semibold mb-3 text-brand">Connect</h4>
+          <div class="flex gap-3 text-sm">
+            {socials.map((s) => (
+              <a href={s.href} class="hover:text-brand">
+                {s.name}
+              </a>
+            ))}
+          </div>
+          <div class="mt-6 text-sm">
+            <h5 class="font-medium mb-1">Office</h5>
+            <p>Kolokang, Sikkim, India</p>
+          </div>
+        </div>
+
+        {/* Recent Events + CTA */}
+        <div>
+          <h4 class="font-semibold mb-3 text-brand">Recent Events</h4>
+          <ul class="text-sm space-y-2">
+            {recent.map((e) => (
+              <li>
+                <div class="font-medium">{e.title}</div>
+                <div class="text-xs text-gray-500">{e.date}</div>
+              </li>
+            ))}
+          </ul>
+          <div class="mt-6">
+            <A
+              href="/donate"
+              class="bg-brand text-white px-4 py-2 rounded-lg shadow hover:bg-accent transition-colors"
+            >
+              Donate Now
+            </A>
           </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div class="bg-gray-800 text-center py-4 text-sm text-gray-500">
+      {/* COPYRIGHT BAR - DIFFERENT GREEN */}
+      <div class="bg-brand-dark text-white text-center py-4 text-sm">
         © {year} NGO Sikkim — All rights reserved.
       </div>
     </footer>

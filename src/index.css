@@ -2,11 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* small app defaults */
-:root {
-  --brand: #2f855a;
-  --accent: #f6ad55;
+@theme {
+  --color-brand: #2f855a; /* primary green */
+  --color-brand-light: #e6f4ea;
+  --color-brand-dark: #22543d;
+  --color-accent: #f6ad55; /* warm accent */
+  --color-accent-light: #fef3e7;
 }
 
 html,
