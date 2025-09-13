@@ -1,109 +1,155 @@
+// src/components/Footer.tsx
 import { A } from "@solidjs/router";
-import { EVENTS, ORG } from "../lib/content";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const recent = EVENTS.slice(-3).reverse();
 
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
+    { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
     { name: "Gallery", href: "/gallery" },
     { name: "Events", href: "/events" },
-    { name: "Press", href: "/press" },
     { name: "Team", href: "/team" },
+    { name: "Contact", href: "/contact" },
+    { name: "Donate", href: "/donate" },
+  ];
+
+  const involvementLinks = [
+    { name: "Volunteer", href: "/get-involved#volunteer" },
+    { name: "Partner With Us", href: "/get-involved#partner" },
+    { name: "Careers", href: "/careers" },
     { name: "Donate", href: "/donate" },
   ];
 
   const socials = [
-    { name: "Facebook", href: "#" },
-    { name: "Twitter", href: "#" },
-    { name: "Instagram", href: "#" },
+    {
+      name: "Facebook",
+      href: "https://facebook.com/yesfoundationsikkim",
+      img: "/icons/facebook.svg",
+    },
+    {
+      name: "Twitter",
+      href: "https://twitter.com/yesfoundationsikkim",
+      img: "/icons/twitter.svg",
+    },
+    {
+      name: "Instagram",
+      href: "https://instagram.com/yesfoundationsikkim",
+      img: "/icons/instagram.svg",
+    },
+    {
+      name: "LinkedIn",
+      href: "https://linkedin.com/company/yesfoundationsikkim",
+      img: "/icons/linkedin.svg",
+    },
   ];
 
   return (
-    <footer class="mt-12 bg-brand-light text-gray-700">
-      <div class="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* About */}
-        <div>
-          <h3 class="text-lg font-bold mb-2 text-brand">NGO Sikkim</h3>
-          <p class="text-sm mb-3">{ORG.summary}</p>
-          <p class="text-sm">
-            <strong>Email:</strong>{" "}
-            <a
-              href={`mailto:${ORG.contact.email}`}
-              class="text-brand hover:underline"
-            >
-              {ORG.contact.email}
-            </a>
-          </p>
-          <p class="text-sm">
-            <strong>Phone:</strong>{" "}
-            <a
-              href={`tel:${ORG.contact.phone}`}
-              class="text-brand hover:underline"
-            >
-              {ORG.contact.phone}
-            </a>
-          </p>
-        </div>
-
-        {/* Quick Links */}
-        <div>
-          <h4 class="font-semibold mb-3 text-brand">Quick Links</h4>
-          <ul class="space-y-2 text-sm">
-            {quickLinks.map((link) => (
-              <li>
-                <A href={link.href} class="hover:text-brand">
-                  {link.name}
-                </A>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Socials */}
-        <div>
-          <h4 class="font-semibold mb-3 text-brand">Connect</h4>
-          <div class="flex gap-3 text-sm">
-            {socials.map((s) => (
-              <a href={s.href} class="hover:text-brand">
-                {s.name}
-              </a>
-            ))}
-          </div>
-          <div class="mt-6 text-sm">
-            <h5 class="font-medium mb-1">Office</h5>
-            <p>Kolokang, Sikkim, India</p>
-          </div>
-        </div>
-
-        {/* Recent Events + CTA */}
-        <div>
-          <h4 class="font-semibold mb-3 text-brand">Recent Events</h4>
-          <ul class="text-sm space-y-2">
-            {recent.map((e) => (
-              <li>
-                <div class="font-medium">{e.title}</div>
-                <div class="text-xs text-gray-500">{e.date}</div>
-              </li>
-            ))}
-          </ul>
-          <div class="mt-6">
-            <A
-              href="/donate"
-              class="bg-brand text-white px-4 py-2 rounded-lg shadow hover:bg-accent transition-colors"
-            >
-              Donate Now
+    <footer class="bg-brand-light text-gray-800">
+      <div class="container mx-auto px-6 md:px-12 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+          {/* About NGO */}
+          <div class="md:col-span-3">
+            <A href="/" class="inline-block">
+              <h2 class="text-xl font-bold text-gray-900">YES Foundation</h2>
             </A>
+            <p class="mt-3 text-sm text-gray-700 leading-relaxed">
+              Empowering youth and communities in Sikkim through education,
+              health, environment, and grassroots development initiatives.
+            </p>
+
+            {/* Social icons */}
+            <div class="mt-4 flex gap-3">
+              {socials.map((s) => (
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.name}
+                  class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:text-accent hover:border-accent transition"
+                >
+                  <img
+                    src={s.img}
+                    alt={s.name}
+                    class="w-5 h-5"
+                    loading="lazy"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div class="md:col-span-3">
+            <h4 class="text-base font-semibold text-gray-900 mb-4">
+              Quick Links
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              {quickLinks.map((l) => (
+                <li>
+                  <A href={l.href} class="hover:text-accent transition">
+                    {l.name}
+                  </A>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Get Involved */}
+          <div class="md:col-span-3">
+            <h4 class="text-base font-semibold text-gray-900 mb-4">
+              Get Involved
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              {involvementLinks.map((l) => (
+                <li>
+                  <A href={l.href} class="hover:text-accent transition">
+                    {l.name}
+                  </A>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div class="md:col-span-3">
+            <h4 class="text-base font-semibold text-gray-900 mb-4">Contact</h4>
+            <p class="text-sm text-gray-700">
+              Email:{" "}
+              <a
+                class="text-brand hover:underline"
+                href="mailto:yesfoundationsikkim@gmail.com"
+              >
+                yesfoundationsikkim@gmail.com
+              </a>
+            </p>
+            <p class="text-sm text-gray-700 mt-1">
+              Phone:{" "}
+              <a class="text-brand hover:underline" href="tel:+916297273900">
+                +91 62972 73900
+              </a>
+            </p>
+            <p class="text-sm text-gray-700 mt-3">
+              Office: Gangtok, Sikkim, India
+            </p>
           </div>
         </div>
       </div>
 
-      {/* COPYRIGHT BAR - DIFFERENT GREEN */}
-      <div class="bg-brand-dark text-white text-center py-4 text-sm">
-        © {year} NGO Sikkim — All rights reserved.
+      {/* Bottom Bar */}
+      <div class="bg-white border-t border-gray-200 py-4">
+        <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+          <p>© {year} YES Foundation — All rights reserved.</p>
+          <div class="flex gap-4 mt-3 md:mt-0">
+            <A href="/privacy" class="hover:text-accent">
+              Privacy Policy
+            </A>
+            <A href="/terms" class="hover:text-accent">
+              Terms of Service
+            </A>
+          </div>
+        </div>
       </div>
     </footer>
   );
