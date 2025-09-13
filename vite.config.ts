@@ -1,11 +1,8 @@
-// vite.config.ts
 import { defineConfig } from "vite";
-import solidPlugin from "vite-plugin-solid";
-import { resolve } from "path";
+import tailwindcss from "@tailwindcss/vite";
+import solid from "vite-plugin-solid";
 
 export default defineConfig({
-  plugins: [solidPlugin()],
-  // no aliasing to keep everything relative imports only
-  server: { port: 5173 },
-  build: { target: "esnext" },
+  plugins: [solid(), tailwindcss()],
+  server: { port: 3000 },
 });
