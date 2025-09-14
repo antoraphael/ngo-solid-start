@@ -7,7 +7,7 @@ export default function GalleryGrid(props: { items: any[]; filter: string }) {
 
   return (
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {items.map((ele, i) => (
+      {items.map((ele) => (
         <div class="rounded overflow-hidden">
           <img
             src={ele.src || PLACEHOLDER_IMG}

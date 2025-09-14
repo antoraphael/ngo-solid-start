@@ -55,7 +55,7 @@ export default function WhatWeDo() {
               transform: `translateX(-${offset() * 50}%)`,
             }}
           >
-            {items.concat(items).map((item, i) => (
+            {items.concat(items).map((item) => (
               <div
                 class="w-1/2 flex-shrink-0 p-4"
                 style={{ "max-width": "50%" }}

@@ -140,7 +140,7 @@ export default function Voices() {
               transform: `translateX(-${translatePercent()}%)`,
             }}
           >
-            {voices.map((v, i) => (
+            {voices.map((v) => (
               <div
                 class="p-3"
                 style={{
