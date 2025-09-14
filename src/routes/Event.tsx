@@ -1,6 +1,6 @@
 // src/routes/Events.tsx
 import { EVENTS } from "../lib/content";
-import ImageWithFallback from "../components/ImageWithFallBack";
+import ImageWithFallback from "../components/Home/ImageWithFallBack";
 
 export default function Events() {
   return (

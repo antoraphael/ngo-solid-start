@@ -1,6 +1,6 @@
 // src/routes/About.tsx
 import { ORG, EXECUTIVES } from "../lib/content";
-import ImageWithFallback from "../components/ImageWithFallBack";
+import ImageWithFallback from "../components/Home/ImageWithFallBack";
 
 export default function About() {
   return (

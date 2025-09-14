@@ -1,7 +1,7 @@
 // src/routes/Gallery.tsx
 import { HOUSES, EVENTS } from "../lib/content";
 import GalleryGrid from "../components/GalleryGrid";
-import ImageWithFallback from "../components/ImageWithFallBack";
+import ImageWithFallback from "../components/Home/ImageWithFallBack";
 
 const items = [
   // map houses to gallery items (use id/title)
