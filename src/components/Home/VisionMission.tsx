@@ -1,7 +1,7 @@
 // src/components/VisionMissionDetailed.tsx
 import { createSignal, onCleanup, onMount } from "solid-js";
 import { ORG } from "../../lib/content";
-import ImageWithFallback from "../ImageWithFallBack";
+import ImageWithFallback from "./ImageWithFallBack";
 
 const sections = [
   {
