@@ -1,5 +1,5 @@
 import { createSignal } from "solid-js";
-import { PLACEHOLDER_IMG, PLACEHOLDER_SVG_DATA_URI } from "../lib/constants";
+import { PLACEHOLDER_IMG, PLACEHOLDER_SVG_DATA_URI } from "../../lib/constants";
 
 type Props = {
   src?: string;
