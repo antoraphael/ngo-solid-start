@@ -6,7 +6,7 @@ import ImageWithFallback from "../components/Home/ImageWithFallBack";
 
 export default function About() {
   const [visibleIntro, setVisibleIntro] = createSignal(false);
-  const [visibleStats, setVisibleStats] = createSignal(false);
+  const [, setVisibleStats] = createSignal(false);
 
   let introEl!: HTMLDivElement;
   let statsEl!: HTMLDivElement;

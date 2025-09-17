@@ -1,7 +1,7 @@
 // src/routes/Press.tsx
 import {
   createSignal,
-  createEffect,
+  // createEffect,
   onMount,
   onCleanup,
   For,
