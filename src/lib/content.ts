@@ -17,13 +17,13 @@ export const ORG = {
 };
 
 export const EXECUTIVES = [
-  { name: "Mr. Bikram Sunwar", role: "President" },
-  { name: "Mr. Chandra Kumar Rai", role: "Treasurer" },
-  { name: "Mr. Mojesh Rai", role: "Coordinator" },
-  { name: "Mr. Suman Rai", role: "Vice-President" },
-  { name: "Mr. Rohit Rai", role: "Advisor" },
-  { name: "Mr. Nikheal Chettri", role: "General Secretary" },
-  { name: "Mr. Arjun Subba", role: "Press & Publicity" },
+  { name: "Mr. Bikram Sunwar", role: "President", photo: "" },
+  { name: "Mr. Chandra Kumar Rai", role: "Treasurer", photo: "" },
+  { name: "Mr. Mojesh Rai", role: "Coordinator", photo: "" },
+  { name: "Mr. Suman Rai", role: "Vice-President", photo: "" },
+  { name: "Mr. Rohit Rai", role: "Advisor", photo: "" },
+  { name: "Mr. Nikheal Chettri", role: "General Secretary", photo: "" },
+  { name: "Mr. Arjun Subba", role: "Press & Publicity", photo: "" },
 ];
 
 export type House = {
@@ -106,10 +106,13 @@ export const HOUSES: House[] = [
 export type EventItem = {
   id: string;
   title: string;
-  date?: string;
+  date: string;
   venue?: string;
   description?: string;
   category?: "Education" | "Health" | "Environment" | "Youth" | "Other";
+  img: string;
+  details: string;
+  partners: Array<string>;
 };
 
 export const EVENTS: EventItem[] = [
@@ -119,6 +122,9 @@ export const EVENTS: EventItem[] = [
     date: "03 Apr 2024",
     venue: "Govt. JHS, Gom, Namchi",
     category: "Education",
+    img: "",
+    partners: [""],
+    details: "",
   },
   {
     id: "national-voters-day-2024",
@@ -126,6 +132,9 @@ export const EVENTS: EventItem[] = [
     date: "29 Apr 2024",
     venue: "Govt. SSS, Nandugoan",
     category: "Education",
+    img: "",
+    partners: [""],
+    details: "",
   },
   {
     id: "tree-plantation-2024",
@@ -134,6 +143,9 @@ export const EVENTS: EventItem[] = [
     venue: "Govt. JHS, Kitam, Namchi",
     category: "Environment",
     description: "80 saplings planted",
+    img: "",
+    partners: [""],
+    details: "",
   },
   {
     id: "blood-donation-2025",
@@ -142,6 +154,9 @@ export const EVENTS: EventItem[] = [
     venue: "Namchi District Hospital / STNM",
     category: "Health",
     description: "Voluntary blood donation camps and awareness",
+    img: "",
+    partners: [""],
+    details: "",
   },
   {
     id: "mental-health-2025",
@@ -150,6 +165,9 @@ export const EVENTS: EventItem[] = [
     venue: "DAC Namchi",
     category: "Health",
     description: "Awareness & policy discussion",
+    img: "",
+    partners: [""],
+    details: "",
   },
   {
     id: "yes-foundation-day-2024",
@@ -157,6 +175,9 @@ export const EVENTS: EventItem[] = [
     date: "20 Aug 2024",
     category: "Other",
     description: "Celebration of service and unity",
+    img: "",
+    partners: [""],
+    details: "",
   },
   {
     id: "sports-sponsorship-2025",
@@ -164,13 +185,112 @@ export const EVENTS: EventItem[] = [
     date: "12 Mar 2025",
     venue: "Assangthang",
     category: "Youth",
+    img: "",
+    partners: [""],
+    details: "",
   },
 ];
 
 export const PRESS = {
   conclusion:
-    "Established in 2021, YES Foundation is dedicated to uplifting the underprivileged through support in health, education, employment and housing. The foundation continues to serve with care, hope, and commitment.",
-  submittedBy: "Youth Empowerment of Sikkim",
-  email: ORG.contact.email,
-  phone: ORG.contact.phone,
+    "YES Foundation has consistently been at the forefront of social development initiatives in Sikkim, contributing to education, healthcare, housing, and community resilience. Our work continues to be recognised by the press and partners nationwide.",
+  lead: "YES Foundation’s work has been featured across regional and national media for its impact on housing, education, and community resilience in Sikkim. Our press office shares updates, milestones, and official statements with the public.",
+
+  email: "media@yesfoundation.org",
+  phone: "+91-98765-43210",
+
+  heroImg: "/placeholder/press-hero.jpg",
+  mediaKitUrl: "/reports/YES_FOUNDATION_2021-2025.pdf",
+
+  releases: [
+    {
+      id: "release-1",
+      title:
+        "YES Foundation launches sustainable housing project in rural Sikkim",
+      date: "2024-11-15",
+      source: "Sikkim Times",
+      excerpt:
+        "The project aims to provide affordable, earthquake-resistant housing to vulnerable communities in remote districts.",
+      summary:
+        "YES Foundation initiated a housing project focusing on safety, sustainability, and affordability, addressing the needs of vulnerable families in rural Sikkim.",
+      url: "https://example.com/press-release-1",
+      img: "/placeholder/press-2.jpg",
+    },
+    {
+      id: "release-2",
+      title: "Community health camp reaches over 2,000 residents",
+      date: "2023-08-05",
+      source: "Northeast Chronicle",
+      excerpt:
+        "YES Foundation partnered with local hospitals to provide free medical checkups and distribute essential medicines.",
+      summary:
+        "Our health initiative brought together medical experts, volunteers, and local authorities to reach more than 2,000 residents with critical services.",
+      url: "https://example.com/press-release-2",
+      img: "/placeholder/press-3.jpg",
+    },
+    {
+      id: "release-3",
+      title: "YES Foundation collaborates with schools for education outreach",
+      date: "2022-02-12",
+      source: "India Development Review",
+      excerpt:
+        "Our School Support Program provided learning kits, training for teachers, and nutrition support for children.",
+      summary:
+        "Focused on rural education, this program expanded teacher capacity, improved student nutrition, and introduced digital tools to remote classrooms.",
+      url: "https://example.com/press-release-3",
+      img: "/placeholder/press-4.jpg",
+    },
+  ],
+
+  milestones: [
+    {
+      short: "2021",
+      date: "2021",
+      title: "COVID-19 Relief",
+      summary:
+        "Distributed food, hygiene kits, and emergency support during the pandemic, reaching over 5,000 families.",
+    },
+    {
+      short: "2022",
+      date: "2022",
+      title: "School Support Program",
+      summary:
+        "Launched rural school partnerships, providing digital learning kits, teacher training, and student scholarships.",
+    },
+    {
+      short: "2023",
+      date: "2023",
+      title: "Healthcare Expansion",
+      summary:
+        "Organised large-scale medical camps in East and South Sikkim, benefiting more than 2,000 villagers.",
+    },
+    {
+      short: "2024",
+      date: "2024",
+      title: "Sustainable Housing Project",
+      summary:
+        "Initiated low-cost earthquake-resistant housing for vulnerable families in mountainous terrain.",
+    },
+  ],
+
+  quotes: [
+    {
+      text: "The Foundation’s housing project gave us a safe place to live after the landslides destroyed our home.",
+      author: "Tashi Dorjee",
+      role: "Community Beneficiary",
+      img: "/placeholder/avatar-1.jpg",
+    },
+    {
+      text: "Partnering with YES Foundation has enabled us to scale our health outreach in the remotest villages of Sikkim.",
+      author: "Dr. Meera Singh",
+      role: "Medical Partner",
+      img: "/placeholder/avatar-2.jpg",
+    },
+    {
+      text: "Education is empowerment. With the school support program, our children have access to better resources than ever before.",
+      author: "Sonam Bhutia",
+      role: "School Principal",
+      img: "/placeholder/avatar-3.jpg",
+    },
+  ],
 };

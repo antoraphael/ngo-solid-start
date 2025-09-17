@@ -11,6 +11,7 @@ import Gallery from "./routes/Gallery";
 import Contact from "./routes/Contact";
 import NotFound from "./routes/NotFound";
 import Events from "./routes/Event";
+import EventDetail from "./routes/EventDetails";
 import Press from "./routes/Press";
 import Team from "./components/Team";
 import Donate from "./routes/Donate";
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="gallery" component={Gallery} />
         <Route path="contact" component={Contact} />
         <Route path="events" component={Events} />
+        <Route path="events/:id" component={EventDetail} />
         <Route path="press" component={Press} />
         <Route path="team" component={Team} />
         <Route path="donate" component={Donate} />

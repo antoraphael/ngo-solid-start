@@ -13,7 +13,7 @@ export default function Header() {
     { name: "Gallery", href: "/gallery" },
     { name: "Events", href: "/events" },
     { name: "Press", href: "/press" },
-    { name: "Team", href: "/team" },
+    // { name: "Team", href: "/team" },
     { name: "Contact", href: "/contact" },
   ];
 
