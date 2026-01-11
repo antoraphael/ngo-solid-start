@@ -9,8 +9,9 @@ import {
 } from "solid-js";
 import { A } from "@solidjs/router";
 import { PRESS } from "../lib/content";
-import type { BlogMarkdownModule, Blog } from "../lib/content";
+import type { Blog, BlogFrontmatter } from "../lib/content";
 import ImageWithFallback from "../components/Home/ImageWithFallBack";
+import fm from "front-matter";
 
 function formatDate(dateStr?: string) {
   if (!dateStr) return "";
@@ -26,18 +27,19 @@ function formatDate(dateStr?: string) {
   }
 }
 
-const blogModules = import.meta.glob<BlogMarkdownModule>(
-  "/content/blogs/*.md",
-  { eager: true }
-);
+const blogModules = import.meta.glob("/content/blogs/*.md", {
+  eager: true,
+  as: "raw",
+});
+const blogList: Blog[] = Object.entries(blogModules).map(([path, raw]) => {
+  const parsed = fm<BlogFrontmatter>(raw as string);
 
-const blogList: Blog[] = Object.entries(blogModules).map(([path, mod]) => {
   const slug = path.split("/").pop()!.replace(".md", "");
 
   return {
     slug,
-    body: mod.default,
-    ...mod.frontmatter,
+    body: parsed.body,
+    ...parsed.attributes,
   };
 });
 
