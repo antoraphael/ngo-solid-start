@@ -9,6 +9,7 @@ import {
 } from "solid-js";
 import { A } from "@solidjs/router";
 import { PRESS } from "../lib/content";
+import type { BlogMarkdownModule, Blog } from "../lib/content";
 import ImageWithFallback from "../components/Home/ImageWithFallBack";
 
 function formatDate(dateStr?: string) {
@@ -24,6 +25,21 @@ function formatDate(dateStr?: string) {
     return dateStr;
   }
 }
+
+const blogModules = import.meta.glob<BlogMarkdownModule>(
+  "/content/blogs/*.md",
+  { eager: true }
+);
+
+const blogList: Blog[] = Object.entries(blogModules).map(([path, mod]) => {
+  const slug = path.split("/").pop()!.replace(".md", "");
+
+  return {
+    slug,
+    body: mod.default,
+    ...mod.frontmatter,
+  };
+});
 
 export default function Press() {
   // reveal flags for sections
@@ -128,7 +144,7 @@ export default function Press() {
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
-          <For each={PRESS.releases ?? []}>
+          <For each={blogList}>
             {(r, i) => (
               <article
                 class="bg-white rounded-lg shadow-sm overflow-hidden flex gap-4 p-4 hover:shadow-md transition transform hover:-translate-y-1"
@@ -146,6 +162,7 @@ export default function Press() {
                   <div class="flex items-start justify-between">
                     <div>
                       <h3 class="font-semibold text-gray-900">{r.title}</h3>
+
                       <div class="text-sm text-gray-500 mt-1">
                         {formatDate(r.date)}
                       </div>
@@ -157,14 +174,13 @@ export default function Press() {
                   </div>
 
                   <p class="text-sm text-gray-700 mt-3 line-clamp-3">
-                    {r.excerpt ?? r.summary}
+                    {r.excerpt}
                   </p>
 
                   <div class="mt-3">
                     <A
-                      href={r.url ?? "#"}
+                      href={r.url || `/blogs/${r.slug}`}
                       class="text-brand text-sm hover:underline"
-                      target={r.url ? "_blank" : undefined}
                     >
                       Read full release →
                     </A>

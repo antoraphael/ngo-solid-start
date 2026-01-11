@@ -294,3 +294,21 @@ export const PRESS = {
     },
   ],
 };
+
+export interface BlogFrontmatter {
+  title: string;
+  date: string;
+  author?: string;
+  excerpt?: string;
+  source?: string;
+  img?: string;
+  url?: string;
+}
+export interface BlogMarkdownModule {
+  frontmatter: BlogFrontmatter;
+  default: string;
+}
+export interface Blog extends BlogFrontmatter {
+  slug: string;
+  body: string;
+}
