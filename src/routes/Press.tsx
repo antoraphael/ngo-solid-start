@@ -181,7 +181,7 @@ export default function Press() {
 
                   <div class="mt-3">
                     <A
-                      href={r.url || `/blogs/${r.slug}`}
+                      href={`/blogs/${r.slug}`}
                       class="text-brand text-sm hover:underline"
                     >
                       Read full release →
