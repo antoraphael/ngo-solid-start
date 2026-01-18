@@ -16,10 +16,11 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string" }
+      - { label: "Source", name: "source", widget: "string" }
       - {
           label: "Cover Image",
           name: "cover",
           widget: "image",
           required: false,
         }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "excerpt", widget: "markdown" }
