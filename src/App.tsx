@@ -15,6 +15,7 @@ import EventDetail from "./routes/EventDetails";
 import Press from "./routes/Press";
 import Team from "./components/Team";
 import Donate from "./routes/Donate";
+import BlogDetail from "./routes/BlogDetails";
 
 function Layout(props: RouteSectionProps) {
   return (
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="events" component={Events} />
         <Route path="events/:id" component={EventDetail} />
         <Route path="press" component={Press} />
+        <Route path="/blogs/:slug" component={BlogDetail} />
         <Route path="team" component={Team} />
         <Route path="donate" component={Donate} />
         <Route path="*" component={NotFound} />
