@@ -1,5 +1,3 @@
-// src/lib/content.ts
-// Extracted & structured content from "YES FOUNDATION 2021-2025.pdf"
 import img1 from "../assets/members/img1.avif";
 import img2 from "../assets/members/img2.avif";
 import img3 from "../assets/members/img3.avif";
@@ -7,12 +5,16 @@ import img4 from "../assets/members/img4.avif";
 import img5 from "../assets/members/img5.avif";
 import img6 from "../assets/members/img6.avif";
 import img7 from "../assets/members/img7.avif";
-import hero1 from "../../assets/hero/hero1.jpg";
-import hero2 from "../../assets/hero/hero2.jpg";
-import hero3 from "../../assets/hero/hero3.jpg";
-import hero4 from "../../assets/hero/hero4.jpg";
-
-export const heroImages = [{src: hero1}, {src: hero2}, {src: hero3}, {src: hero4}];
+import hero1 from "../assets/hero/hero1.avif";
+import hero2 from "../assets/hero/hero2.avif";
+import hero3 from "../assets/hero/hero3.avif";
+import hero4 from "../assets/hero/hero4.avif";
+import hero5 from "../assets/hero/hero5.avif";
+import hero6 from "../assets/hero/hero6.avif";
+import visionImg from "../assets/home/section_vision.avif";
+import missionImg from "../assets/home/section_mission.avif";
+import storyImg from "../assets/home/section_story.avif";
+import valueImg from "../assets/home/section_values.avif";
 
 export const ORG = {
   name: "YES FOUNDATION",
@@ -28,6 +30,40 @@ export const ORG = {
     phone: "6297273900",
   },
 };
+
+export const homeSections = [
+  {
+    title: "🌱 Our Vision",
+    text: `A just, inclusive, and resilient Sikkim where youth are empowered to lead change,
+           communities thrive, and sustainable development uplifts even the most marginalized.`,
+    img: visionImg,
+  },
+  {
+    title: "🎯 Our Mission",
+    text: `We engage, educate, and empower the people of Sikkim through initiatives in
+           education, health, environment, and community leadership — ensuring youth energy
+           is channeled into meaningful change.`,
+    img: missionImg,
+  },
+  {
+    title: "📖 Our Story",
+    text: `Founded in ${ORG.est}, ${ORG.fullName} began with a group of passionate young
+           leaders who wanted to uplift their communities. Over the years, the Foundation
+           has grown into a movement connecting youth, volunteers, and local partners.`,
+    img: storyImg,
+  },
+  {
+    title: "💡 Our Values",
+    text: `Integrity, inclusivity, and sustainability guide everything we do.
+           We believe in empowering local leadership, building long-term resilience,
+           and ensuring that every action contributes to a just society.`,
+    img:  valueImg,
+  },
+];
+
+export const heroImages = [{src: hero1}, {src: hero2}, {src: hero3}, {src: hero4}, {src: hero5}, {src: hero6}];
+
+
 
 export const EXECUTIVES = [
   { name: "Mr. Bikram Sunwar", role: "President", photo: img1 },

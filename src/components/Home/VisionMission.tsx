@@ -1,42 +1,13 @@
 // src/components/VisionMissionDetailed.tsx
 import { createSignal, onCleanup, onMount } from "solid-js";
-import { ORG } from "../../lib/content";
 import ImageWithFallback from "./ImageWithFallBack";
+import { homeSections } from "../../lib/content";
 
-const sections = [
-  {
-    title: "🌱 Our Vision",
-    text: `A just, inclusive, and resilient Sikkim where youth are empowered to lead change,
-           communities thrive, and sustainable development uplifts even the most marginalized.`,
-    img: "https://picsum.photos/seed/vision/900/600",
-  },
-  {
-    title: "🎯 Our Mission",
-    text: `We engage, educate, and empower the people of Sikkim through initiatives in
-           education, health, environment, and community leadership — ensuring youth energy
-           is channeled into meaningful change.`,
-    img: "https://picsum.photos/seed/mission/900/600",
-  },
-  {
-    title: "📖 Our Story",
-    text: `Founded in ${ORG.est}, ${ORG.fullName} began with a group of passionate young
-           leaders who wanted to uplift their communities. Over the years, the Foundation
-           has grown into a movement connecting youth, volunteers, and local partners.`,
-    img: "https://picsum.photos/seed/story/900/600",
-  },
-  {
-    title: "💡 Our Values",
-    text: `Integrity, inclusivity, and sustainability guide everything we do.
-           We believe in empowering local leadership, building long-term resilience,
-           and ensuring that every action contributes to a just society.`,
-    img: "https://picsum.photos/seed/values/900/600",
-  },
-];
 
 export default function VisionMissionDetailed() {
   return (
     <section>
-      {sections.map((sec, i) => (
+      {homeSections.map((sec, i) => (
         <SectionBlock sec={sec} index={i} />
       ))}
     </section>
@@ -44,7 +15,7 @@ export default function VisionMissionDetailed() {
 }
 
 // Child component for each section
-function SectionBlock(props: { sec: (typeof sections)[0]; index: number }) {
+function SectionBlock(props: { sec: (typeof homeSections)[0]; index: number }) {
   const [visible, setVisible] = createSignal(false);
   let ref: HTMLDivElement | undefined;
 
