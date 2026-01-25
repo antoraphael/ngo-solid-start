@@ -1,5 +1,18 @@
 // src/lib/content.ts
 // Extracted & structured content from "YES FOUNDATION 2021-2025.pdf"
+import img1 from "../assets/members/img1.avif";
+import img2 from "../assets/members/img2.avif";
+import img3 from "../assets/members/img3.avif";
+import img4 from "../assets/members/img4.avif";
+import img5 from "../assets/members/img5.avif";
+import img6 from "../assets/members/img6.avif";
+import img7 from "../assets/members/img7.avif";
+import hero1 from "../../assets/hero/hero1.jpg";
+import hero2 from "../../assets/hero/hero2.jpg";
+import hero3 from "../../assets/hero/hero3.jpg";
+import hero4 from "../../assets/hero/hero4.jpg";
+
+export const heroImages = [{src: hero1}, {src: hero2}, {src: hero3}, {src: hero4}];
 
 export const ORG = {
   name: "YES FOUNDATION",
@@ -17,13 +30,13 @@ export const ORG = {
 };
 
 export const EXECUTIVES = [
-  { name: "Mr. Bikram Sunwar", role: "President", photo: "" },
-  { name: "Mr. Chandra Kumar Rai", role: "Treasurer", photo: "" },
-  { name: "Mr. Mojesh Rai", role: "Coordinator", photo: "" },
-  { name: "Mr. Suman Rai", role: "Vice-President", photo: "" },
-  { name: "Mr. Rohit Rai", role: "Advisor", photo: "" },
-  { name: "Mr. Nikheal Chettri", role: "General Secretary", photo: "" },
-  { name: "Mr. Arjun Subba", role: "Press & Publicity", photo: "" },
+  { name: "Mr. Bikram Sunwar", role: "President", photo: img1 },
+  { name: "Mr. Chandra Kumar Rai", role: "Treasurer", photo: img5 },
+  { name: "Mr. Mojesh Rai", role: "Coordinator", photo: img2 },
+  { name: "Mr. Suman Rai", role: "Vice-President", photo: img6 },
+  { name: "Mr. Rohit Rai", role: "Advisor", photo: img3 },
+  { name: "Mr. Nikheal Chettri", role: "General Secretary", photo:img7 },
+  { name: "Mr. Arjun Subba", role: "Press & Publicity", photo: img4 },
 ];
 
 export type House = {

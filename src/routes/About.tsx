@@ -3,6 +3,7 @@ import { createSignal, onCleanup, onMount } from "solid-js";
 import { A } from "@solidjs/router";
 import { ORG, EXECUTIVES } from "../lib/content";
 import ImageWithFallback from "../components/Home/ImageWithFallBack";
+import founderImg from "../assets/members/yes_founder.avif"
 
 export default function About() {
   const [visibleIntro, setVisibleIntro] = createSignal(false);
@@ -96,7 +97,7 @@ export default function About() {
           <div class="md:col-span-1">
             <div class="rounded-lg overflow-hidden shadow-md">
               <ImageWithFallback
-                src="/placeholder/office.jpg"
+                src={founderImg}
                 alt="YES Foundation - community"
                 class="w-full h-56 object-cover"
               />

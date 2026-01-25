@@ -1,10 +1,5 @@
 import { createSignal, onCleanup, onMount } from "solid-js";
-
-const images = [
-  "https://picsum.photos/id/1018/1200/500",
-  "https://picsum.photos/id/1015/1200/500",
-  "https://picsum.photos/id/1019/1200/500",
-];
+import { heroImages } from "../../lib/content";
 
 export default function Hero() {
   const [current, setCurrent] = createSignal(0);
@@ -12,7 +7,7 @@ export default function Hero() {
   // Auto-slide every 4s, stop at last
   onMount(() => {
     const interval = setInterval(() => {
-      if (current() < images.length - 1) {
+      if (current() < heroImages.length - 1) {
         setCurrent((c) => c + 1);
       }
     }, 4000);
@@ -24,7 +19,7 @@ export default function Hero() {
     if (current() > 0) setCurrent((c) => c - 1);
   };
   const nextSlide = () => {
-    if (current() < images.length - 1) setCurrent((c) => c + 1);
+    if (current() < heroImages.length - 1) setCurrent((c) => c + 1);
   };
 
   return (
@@ -36,9 +31,9 @@ export default function Hero() {
           transform: `translateX(-${current() * 100}%)`,
         }}
       >
-        {images.map((src, i) => (
+        {heroImages.map((img, i) => (
           <img
-            src={src}
+            src={img.src}
             alt={`Slide ${i + 1}`}
             class="w-full flex-shrink-0 object-cover h-[500px] select-none"
             draggable={false}
@@ -75,7 +70,7 @@ export default function Hero() {
       </button>
       <button
         onClick={nextSlide}
-        disabled={current() === images.length - 1}
+        disabled={current() === heroImages.length - 1}
         class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 text-brand p-3 rounded-full shadow hover:bg-accent hover:text-white transition disabled:opacity-40"
       >
         ›
@@ -83,7 +78,7 @@ export default function Hero() {
 
       {/* Dots */}
       <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-        {images.map((_, i) => (
+        {heroImages.map((_, i) => (
           <button
             class={`w-3 h-3 rounded-full ${
               i === current() ? "bg-accent" : "bg-white/60"
