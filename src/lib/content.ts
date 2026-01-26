@@ -11,10 +11,43 @@ import hero3 from "../assets/hero/hero3.avif";
 import hero4 from "../assets/hero/hero4.avif";
 import hero5 from "../assets/hero/hero5.avif";
 import hero6 from "../assets/hero/hero6.avif";
-import visionImg from "../assets/home/section_vision.avif";
-import missionImg from "../assets/home/section_mission.avif";
-import storyImg from "../assets/home/section_story.avif";
-import valueImg from "../assets/home/section_values.avif";
+import visionImg from "../assets/home/our_vision.avif";
+import missionImg from "../assets/home/our_mission.avif";
+import storyImg from "../assets/home/our_story.avif";
+import valueImg from "../assets/home/our_values.avif";
+import wwd_environment from "../assets/home/wwd_env.avif";
+import wwd_health from "../assets/home/wwd_health.avif";
+import wwd_education from "../assets/home/wwd_education.avif";
+import wwd_community from "../assets/home/wwd_community.avif";
+import wwd_youth from "../assets/home/wwd_youth.avif";
+
+export const whatWeDoItems = [
+  {
+    title: "Education & Skill Development",
+    desc: "Workshops, scholarships, and learning programs for youth.",
+    img: wwd_education,
+  },
+  {
+    title: "Health & Well-being",
+    desc: "Health camps, awareness drives, and basic healthcare access.",
+    img: wwd_health,
+  },
+  {
+    title: "Environment & Sustainability",
+    desc: "Tree plantation, clean-up drives, and sustainable farming.",
+    img: wwd_environment,
+  },
+  {
+    title: "Community Development",
+    desc: "Building homes, empowering women, and improving livelihoods.",
+    img: wwd_community,
+  },
+  {
+    title: "Youth Empowerment",
+    desc: "Training programs that develop leadership and soft skills.",
+    img: wwd_youth,
+  },
+];
 
 export const ORG = {
   name: "YES FOUNDATION",
@@ -57,13 +90,18 @@ export const homeSections = [
     text: `Integrity, inclusivity, and sustainability guide everything we do.
            We believe in empowering local leadership, building long-term resilience,
            and ensuring that every action contributes to a just society.`,
-    img:  valueImg,
+    img: valueImg,
   },
 ];
 
-export const heroImages = [{src: hero1}, {src: hero2}, {src: hero3}, {src: hero4}, {src: hero5}, {src: hero6}];
-
-
+export const heroImages = [
+  { src: hero1 },
+  { src: hero2 },
+  { src: hero3 },
+  { src: hero4 },
+  { src: hero5 },
+  { src: hero6 },
+];
 
 export const EXECUTIVES = [
   { name: "Mr. Bikram Sunwar", role: "President", photo: img1 },
@@ -71,7 +109,7 @@ export const EXECUTIVES = [
   { name: "Mr. Mojesh Rai", role: "Coordinator", photo: img2 },
   { name: "Mr. Suman Rai", role: "Vice-President", photo: img6 },
   { name: "Mr. Rohit Rai", role: "Advisor", photo: img3 },
-  { name: "Mr. Nikheal Chettri", role: "General Secretary", photo:img7 },
+  { name: "Mr. Nikheal Chettri", role: "General Secretary", photo: img7 },
   { name: "Mr. Arjun Subba", role: "Press & Publicity", photo: img4 },
 ];
 

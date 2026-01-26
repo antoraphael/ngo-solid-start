@@ -3,7 +3,10 @@ import { createSignal, onCleanup, onMount } from "solid-js";
 import { A } from "@solidjs/router";
 import { ORG, EXECUTIVES } from "../lib/content";
 import ImageWithFallback from "../components/Home/ImageWithFallBack";
-import founderImg from "../assets/members/yes_founder.avif"
+import founderImg from "../assets/members/yes_founder.avif";
+import houseBeforeImg from "../assets/home/house_before.avif";
+import houseAfterImg from "../assets/home/house_after.avif";
+import houseProjectImg from "../assets/home/house_new.avif";
 
 export default function About() {
   const [visibleIntro, setVisibleIntro] = createSignal(false);
@@ -21,7 +24,7 @@ export default function About() {
           introObs.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     if (introEl) introObs.observe(introEl);
 
@@ -33,7 +36,7 @@ export default function About() {
           statsObs.disconnect();
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.25 },
     );
     if (statsEl) statsObs.observe(statsEl);
 
@@ -204,21 +207,21 @@ export default function About() {
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div class="rounded overflow-hidden">
               <ImageWithFallback
-                src="/placeholder/house-before.jpg"
+                src={houseBeforeImg}
                 alt="Before - house"
                 class="w-full h-44 object-cover"
               />
             </div>
             <div class="rounded overflow-hidden">
               <ImageWithFallback
-                src="/placeholder/house-after.jpg"
+                src={houseAfterImg}
                 alt="After - house"
                 class="w-full h-44 object-cover"
               />
             </div>
             <div class="rounded overflow-hidden">
               <ImageWithFallback
-                src="/placeholder/house-2.jpg"
+                src={houseProjectImg}
                 alt="House project"
                 class="w-full h-44 object-cover"
               />
