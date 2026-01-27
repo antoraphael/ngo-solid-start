@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@theme {
+  --color-brand: #2f855a; /* primary green */
+  --color-brand-light: #e6f4ea;
+  --color-brand-dark: #22543d;
+  --color-accent: #f6ad55; /* warm accent */
+  --color-accent-light: #fef3e7;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: white;
+  color: #111827;
+}
