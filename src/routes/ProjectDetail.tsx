@@ -1,120 +1,18 @@
 // src/routes/ProjectDetail.tsx
-import { useParams, A } from "@solidjs/router";
+import { useParams, useNavigate, A } from "@solidjs/router";
 import { createMemo, onMount } from "solid-js";
 import ImageWithFallback from "../components/Home/ImageWithFallBack";
 import { PLACEHOLDER_IMG } from "../lib/constants";
-
-const PROJECTS_LOOKUP: Record<
-  string,
-  {
-    id: string;
-    title: string;
-    subtitle?: string;
-    description: string;
-    gallery?: string[];
-    partners?: string[];
-    timeline?: { date: string; note: string }[];
-    impact?: { metric: string; value: string }[];
-    category?: string;
-    location?: string;
-    year?: number;
-  }
-> = {
-  "house-building": {
-    id: "house-building",
-    title: "House Building Project",
-    subtitle: "Safe homes for vulnerable families",
-    description:
-      "Working closely with local leaders and masons, YES Foundation constructs durable, weather-resistant homes for families who previously lived in unsafe structures. The project emphasizes local materials, thermal efficiency and involvement of the household in building decisions.",
-    gallery: [
-      "/placeholder/house-before.jpg",
-      "/placeholder/house-after.jpg",
-      "/placeholder/house-2.jpg",
-    ],
-    partners: ["Local Panchayat", "District Social Welfare"],
-    timeline: [
-      { date: "Jan 2022", note: "Community selection & baseline survey" },
-      { date: "Mar 2022", note: "Material mobilisation & training" },
-      {
-        date: "Aug 2022",
-        note: "Construction completed for Phase 1 (10 houses)",
-      },
-      { date: "Dec 2023", note: "Phase 2 completed (11 houses)" },
-    ],
-    impact: [
-      { metric: "Families housed", value: "21" },
-      { metric: "Lives improved", value: "100+" },
-    ],
-    category: "Housing",
-    location: "Mangan",
-    year: 2023,
-  },
-
-  "school-support": {
-    id: "school-support",
-    title: "Rural School Support",
-    subtitle: "Better facilities, better learning",
-    description:
-      "We upgrade classroom infrastructure, provide learning materials and train teachers in active learning pedagogy. The goal is to reduce dropouts and improve learning outcomes in remote schools.",
-    gallery: ["/placeholder/school.jpg", "/placeholder/school-2.jpg"],
-    partners: ["District Education Office", "Local NGOs"],
-    timeline: [
-      { date: "Jul 2021", note: "Needs assessment & stakeholder workshops" },
-      { date: "Sep 2021", note: "Material & furniture distribution" },
-      { date: "Mar 2022", note: "Teacher training workshops" },
-    ],
-    impact: [
-      { metric: "Schools supported", value: "8" },
-      { metric: "Students reached", value: "1,200+" },
-    ],
-    category: "Education",
-    location: "Gangtok (rural)",
-    year: 2022,
-  },
-
-  "health-camps": {
-    id: "health-camps",
-    title: "Health Camps & Awareness",
-    subtitle: "Accessible healthcare outreach",
-    description:
-      "Periodic camps bring screenings, basic treatment and health education to villages with limited access to health facilities. Camps include maternal & child health messaging and referrals when needed.",
-    gallery: ["/placeholder/health-camp.jpg"],
-    partners: ["Local Health Department"],
-    timeline: [
-      { date: "2021–2024", note: "Ongoing periodic camps across districts" },
-    ],
-    impact: [
-      { metric: "Camps held", value: "200+" },
-      { metric: "People screened", value: "10,000+" },
-    ],
-    category: "Health",
-    location: "Statewide",
-    year: 2021,
-  },
-
-  "tree-plantation": {
-    id: "tree-plantation",
-    title: "Community Tree Plantation",
-    subtitle: "Restoring local ecology",
-    description:
-      "Working with community groups to plant native saplings, improve soil and protect watersheds. Each drive is accompanied by training on sapling care.",
-    gallery: ["/placeholder/trees.jpg"],
-    partners: ["Forest Department", "Youth Volunteers"],
-    timeline: [{ date: "2023", note: "Large-scale drives in South Sikkim" }],
-    impact: [{ metric: "Saplings planted", value: "160+" }],
-    category: "Environment",
-    location: "South Sikkim",
-    year: 2024,
-  },
-};
+import { projectsList } from "../lib/content";
 
 export default function ProjectDetail() {
   const params = useParams();
+  const navigate = useNavigate();
+
   const id = params.id ?? "";
 
-  const project = createMemo(() => PROJECTS_LOOKUP[id]);
+  const project = createMemo(() => projectsList.find((p) => p.id === id));
 
-  // small defensive guard: if id param changes, scroll to top
   onMount(() => window.scrollTo({ top: 0, behavior: "smooth" }));
 
   if (!project()) {
@@ -135,6 +33,14 @@ export default function ProjectDetail() {
 
   return (
     <main class="container mx-auto px-6 md:px-12 py-12">
+      {/* top back button */}
+      <button
+        onClick={() => navigate(-1)}
+        class="mb-6 inline-flex items-center gap-2 text-sm text-gray-600 hover:text-brand transition"
+      >
+        ← Back
+      </button>
+
       <div class="grid lg:grid-cols-3 gap-8">
         <div class="lg:col-span-2">
           <h1 class="text-3xl font-bold text-gray-900">{p.title}</h1>
@@ -142,7 +48,9 @@ export default function ProjectDetail() {
 
           {/* meta */}
           <div class="mt-4 flex flex-wrap gap-4 text-sm text-gray-600">
-            <div class="px-3 py-1 bg-gray-100 rounded-full">{p.category}</div>
+            {p.category && (
+              <div class="px-3 py-1 bg-gray-100 rounded-full">{p.category}</div>
+            )}
             {p.location && (
               <div class="px-3 py-1 bg-gray-100 rounded-full">{p.location}</div>
             )}
@@ -162,7 +70,7 @@ export default function ProjectDetail() {
                     class="w-full h-48 object-cover"
                   />
                 </div>
-              )
+              ),
             )}
           </div>
 
@@ -232,7 +140,7 @@ export default function ProjectDetail() {
           </div>
         </div>
 
-        {/* aside: quick facts */}
+        {/* aside */}
         <aside class="rounded-lg p-6 bg-gray-50 h-fit">
           <h4 class="text-lg font-semibold text-gray-900 mb-3">
             Project Details
@@ -250,10 +158,12 @@ export default function ProjectDetail() {
                 <dd>{p.year}</dd>
               </div>
             )}
-            <div>
-              <dt class="font-medium text-gray-800">Category</dt>
-              <dd>{p.category}</dd>
-            </div>
+            {p.category && (
+              <div>
+                <dt class="font-medium text-gray-800">Category</dt>
+                <dd>{p.category}</dd>
+              </div>
+            )}
             {p.partners && p.partners.length > 0 && (
               <div>
                 <dt class="font-medium text-gray-800">Partners</dt>
@@ -264,7 +174,7 @@ export default function ProjectDetail() {
         </aside>
       </div>
 
-      {/* back link */}
+      {/* bottom back link */}
       <div class="mt-8">
         <A href="/projects" class="text-brand hover:underline">
           ← Back to projects

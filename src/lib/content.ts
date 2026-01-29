@@ -20,6 +20,122 @@ import wwd_health from "../assets/home/wwd_health.avif";
 import wwd_education from "../assets/home/wwd_education.avif";
 import wwd_community from "../assets/home/wwd_community.avif";
 import wwd_youth from "../assets/home/wwd_youth.avif";
+import home1 from "../assets/projects/home1.avif";
+import home2 from "../assets/projects/home2.avif";
+import home3 from "../assets/projects/home3.avif";
+import home4 from "../assets/projects/home4.avif";
+import school1 from "../assets/projects/school1.avif";
+import school2 from "../assets/projects/school2.avif";
+import school3 from "../assets/projects/school3.avif";
+import school4 from "../assets/projects/school4.avif";
+import health1 from "../assets/projects/health1.avif";
+import health2 from "../assets/projects/health2.avif";
+import health3 from "../assets/projects/health3.avif";
+import health4 from "../assets/projects/health4.avif";
+import green1 from "../assets/projects/green1.avif";
+import green2 from "../assets/projects/green2.avif";
+import green3 from "../assets/projects/green3.avif";
+import green4 from "../assets/projects/green4.avif";
+
+export const projectsList = [
+  {
+    id: "house-building",
+    title: "House Building",
+    subtitle: "Safe homes for vulnerable families",
+    description:
+      "Working closely with local leaders and masons, YES Foundation constructs durable, weather-resistant homes for families who previously lived in unsafe structures. The project emphasizes local materials, thermal efficiency and involvement of the household in building decisions.",
+    short:
+      "Constructing safe, climate-resilient houses for vulnerable families across remote Sikkim villages.",
+    gallery: [home1, home2, home3, home4],
+    partners: ["Local Panchayat", "District Social Welfare"],
+    timeline: [
+      { date: "Jan 2022", note: "Community selection & baseline survey" },
+      { date: "Mar 2022", note: "Material mobilisation & training" },
+      {
+        date: "Aug 2022",
+        note: "Construction completed for Phase 1 (10 houses)",
+      },
+      { date: "Dec 2023", note: "Phase 2 completed (11 houses)" },
+    ],
+    impact: [
+      { metric: "Families housed", value: "21" },
+      { metric: "Lives improved", value: "100+" },
+    ],
+    category: "Housing",
+    location: "Mangan & East Sikkim",
+    district: "Mangan",
+    year: 2023,
+  },
+
+  {
+    id: "school-support",
+    title: "School Support",
+    subtitle: "Better facilities, better learning",
+    description:
+      "We upgrade classroom infrastructure, provide learning materials and train teachers in active learning pedagogy. The goal is to reduce dropouts and improve learning outcomes in remote schools.",
+    short:
+      "Improving rural school facilities, providing learning materials and teacher training to increase retention.",
+    gallery: [school1, school2, school3, school4],
+    partners: ["District Education Office", "Local NGOs"],
+    timeline: [
+      { date: "Jul 2021", note: "Needs assessment & stakeholder workshops" },
+      { date: "Sep 2021", note: "Material & furniture distribution" },
+      { date: "Mar 2022", note: "Teacher training workshops" },
+    ],
+    impact: [
+      { metric: "Schools supported", value: "8" },
+      { metric: "Students reached", value: "1,200+" },
+    ],
+    category: "Education",
+    location: "Rural Gangtok",
+    district: "Gangtok",
+    year: 2022,
+    img: "/placeholder/school.jpg",
+  },
+
+  {
+    id: "health-camps",
+    title: "Health Camps & Awareness",
+    subtitle: "Accessible healthcare outreach",
+    description:
+      "Periodic camps bring screenings, basic treatment and health education to villages with limited access to health facilities. Camps include maternal & child health messaging and referrals when needed.",
+    short:
+      "Regular health camps offering screenings, basic treatment and health education in remote communities.",
+    gallery: [health2, health1, health3, health4],
+    partners: ["Local Health Department"],
+    timeline: [
+      { date: "2021–2024", note: "Ongoing periodic camps across districts" },
+    ],
+    impact: [
+      { metric: "Camps held", value: "200+" },
+      { metric: "People screened", value: "10,000+" },
+    ],
+    category: "Health",
+    location: "Multiple districts",
+    district: "Statewide",
+    year: 2021,
+    img: "/placeholder/health-camp.jpg",
+  },
+
+  {
+    id: "tree-plantation",
+    title: "Tree Plantation Drives",
+    subtitle: "Restoring local ecology",
+    description:
+      "Working with community groups to plant native saplings, improve soil and protect watersheds. Each drive is accompanied by training on sapling care.",
+    short:
+      "Community-driven tree-planting and watershed protection projects to restore local ecology.",
+    gallery: [green1, green2, green3, green4],
+    partners: ["Forest Department", "Youth Volunteers"],
+    timeline: [{ date: "2023", note: "Large-scale drives in South Sikkim" }],
+    impact: [{ metric: "Saplings planted", value: "160+" }],
+    category: "Environment",
+    location: "Community forests, South Sikkim",
+    district: "South Sikkim",
+    year: 2024,
+    img: "/placeholder/trees.jpg",
+  },
+];
 
 export const whatWeDoItems = [
   {
