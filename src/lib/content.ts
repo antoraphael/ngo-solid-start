@@ -135,6 +135,157 @@ export const projectsList = [
     year: 2024,
     img: "/placeholder/trees.jpg",
   },
+  {
+    id: "blood-donation",
+    title: "Voluntary Blood Donation",
+    subtitle: "Saving lives through community participation",
+    description:
+      "YES Foundation organizes voluntary blood donation camps in collaboration with government hospitals to strengthen emergency healthcare systems. The initiative promotes awareness, encourages youth participation and supports patients in critical need.",
+    short:
+      "Organizing voluntary blood donation camps to support hospitals and save lives.",
+    gallery: [health1, health2, health3, health4],
+    partners: ["Namchi District Hospital", "STNM Hospital"],
+    timeline: [
+      { date: "2023–2025", note: "Multiple camps across Namchi & Gangtok" },
+      {
+        date: "Feb 2025",
+        note: "Camp held on Hon’ble CM Shri Prem Singh Golay’s birthday",
+      },
+    ],
+    impact: [
+      { metric: "Camps conducted", value: "3+" },
+      { metric: "Donors participated", value: "98+" },
+    ],
+    category: "Health",
+    location: "Namchi & Gangtok",
+    district: "Namchi",
+    year: 2025,
+  },
+
+  {
+    id: "sanitary-vending-machines",
+    title: "Sanitary Vending Machine Support",
+    subtitle: "Dignity and health for young girls",
+    description:
+      "To improve menstrual hygiene and reduce absenteeism, YES Foundation sponsored and installed sanitary vending machines in government schools and colleges. Awareness sessions were conducted alongside installations.",
+    short:
+      "Installing sanitary vending machines in schools and colleges to promote menstrual hygiene.",
+    gallery: [""],
+    partners: ["Education Department", "Local Schools"],
+    timeline: [
+      { date: "May 2024", note: "Sikkim Government College, Namchi" },
+      { date: "Oct 2024", note: "Govt. SSS, Nandugaon" },
+    ],
+    impact: [
+      { metric: "Institutions supported", value: "2" },
+      { metric: "Girls benefited", value: "500+" },
+    ],
+    category: "Education",
+    location: "Namchi",
+    district: "Namchi",
+    year: 2024,
+  },
+
+  {
+    id: "painting-awareness",
+    title: "Painting & Awareness Programmes",
+    subtitle: "Learning through creativity",
+    description:
+      "Creative competitions combined with awareness sessions were conducted in schools to encourage expression, confidence and civic awareness among students. These programs promote holistic learning beyond textbooks.",
+    short:
+      "School-level painting competitions combined with social awareness sessions.",
+    gallery: [""],
+    partners: ["Govt. JHS Gom", "Teachers & Volunteers"],
+    timeline: [
+      { date: "Apr 2024", note: "Painting competition at Govt. JHS Gom" },
+    ],
+    impact: [
+      { metric: "Students participated", value: "200+" },
+      { metric: "Schools covered", value: "1" },
+    ],
+    category: "Education",
+    location: "Gom, Namchi",
+    district: "Namchi",
+    year: 2024,
+  },
+
+  {
+    id: "voters-awareness",
+    title: "Voters Awareness Campaign",
+    subtitle: "Building informed future citizens",
+    description:
+      "YES Foundation conducted voter awareness programs in schools to educate young citizens on democratic values, voting rights and responsibilities. The initiative encourages informed participation in elections.",
+    short:
+      "Educating students on voting rights, democracy and civic responsibility.",
+    gallery: [""],
+    partners: ["Election Department", "Govt. Schools"],
+    timeline: [{ date: "Apr 2024", note: "National Voters Day celebration" }],
+    impact: [
+      { metric: "Students reached", value: "300+" },
+      { metric: "Institutions covered", value: "1" },
+    ],
+    category: "Civic Awareness",
+    location: "Nandugaon, Namchi",
+    district: "Namchi",
+    year: 2024,
+  },
+
+  {
+    id: "financial-medical-aid",
+    title: "Medical & Financial Assistance",
+    subtitle: "Standing with families in crisis",
+    description:
+      "YES Foundation provided direct financial assistance to patients and families facing medical emergencies. Support was extended across constituencies to reduce treatment burden and ensure timely care.",
+    short:
+      "Providing direct financial aid to patients facing medical emergencies.",
+    gallery: [""],
+    partners: ["Local Communities"],
+    timeline: [
+      { date: "Apr–May 2024", note: "Aid distributed across Namchi districts" },
+    ],
+    impact: [{ metric: "Patients supported", value: "4+" }],
+    category: "Health",
+    location: "Namchi District",
+    district: "Namchi",
+    year: 2024,
+  },
+
+  {
+    id: "youth-skill-development",
+    title: "Youth Skill & Leadership Development",
+    subtitle: "Preparing youth for the future",
+    description:
+      "Through workshops, mentorship and leadership opportunities, YES Foundation empowers youth with employability skills, financial literacy and social responsibility.",
+    short:
+      "Workshops, mentorship and leadership programs for youth empowerment.",
+    gallery: [""],
+    partners: ["Youth Volunteers", "Local Leaders"],
+    timeline: [
+      { date: "2023–2025", note: "Ongoing youth empowerment initiatives" },
+    ],
+    impact: [{ metric: "Youth engaged", value: "500+" }],
+    category: "Youth Empowerment",
+    location: "Multiple locations",
+    district: "Statewide",
+    year: 2025,
+  },
+
+  {
+    id: "sports-material-support",
+    title: "Sports Material Sponsorship",
+    subtitle: "Encouraging fitness and teamwork",
+    description:
+      "To promote sports culture and physical well-being, YES Foundation sponsored sports equipment for youth in rural areas, encouraging teamwork, discipline and healthy lifestyles.",
+    short: "Providing sports materials to promote youth fitness and talent.",
+    gallery: [""],
+    partners: ["Local Youth Clubs"],
+    timeline: [{ date: "Mar 2025", note: "Distribution at Assangthang" }],
+    impact: [{ metric: "Youth benefited", value: "100+" }],
+    category: "Sports",
+    location: "Assangthang",
+    district: "Namchi",
+    year: 2025,
+  },
 ];
 
 export const whatWeDoItems = [
