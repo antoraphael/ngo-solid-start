@@ -1,5 +1,4 @@
 // src/routes/Gallery.tsx
-import { HOUSES, EVENTS } from "../lib/content";
 import GalleryGrid from "../components/GalleryGrid";
 import ImageWithFallback from "../components/Home/ImageWithFallBack";
 import { galleryImages } from "../lib/content";
