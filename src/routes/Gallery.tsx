@@ -2,23 +2,8 @@
 import { HOUSES, EVENTS } from "../lib/content";
 import GalleryGrid from "../components/GalleryGrid";
 import ImageWithFallback from "../components/Home/ImageWithFallBack";
-
-const items = [
-  // map houses to gallery items (use id/title)
-  ...HOUSES.map((h) => ({
-    id: `house-${h.id}`,
-    src: undefined,
-    title: `${h.owner} — ${h.location}`,
-    category: "Housing",
-  })),
-  // map events
-  ...EVENTS.map((e) => ({
-    id: `event-${e.id}`,
-    src: undefined,
-    title: e.title,
-    category: e.category ?? "Other",
-  })),
-];
+import { galleryImages } from "../lib/content";
+import { broadGalleryImages } from "../lib/content";
 
 export default function Gallery() {
   return (
@@ -32,12 +17,15 @@ export default function Gallery() {
         </p>
       </div>
 
-      <GalleryGrid items={items} filter={""} />
+      <GalleryGrid items={galleryImages} filter={""} />
       <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* show a few large feature images */}
-        <ImageWithFallback class="w-full h-64 object-cover rounded" />
-        <ImageWithFallback class="w-full h-64 object-cover rounded" />
-        <ImageWithFallback class="w-full h-64 object-cover rounded" />
+        {broadGalleryImages.map((src) => (
+          <ImageWithFallback
+            src={src}
+            class="w-full h-64 object-cover rounded"
+          />
+        ))}
       </div>
     </section>
   );

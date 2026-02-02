@@ -36,6 +36,51 @@ import green1 from "../assets/projects/green1.avif";
 import green2 from "../assets/projects/green2.avif";
 import green3 from "../assets/projects/green3.avif";
 import green4 from "../assets/projects/green4.avif";
+import vending1 from "../assets/projects/vending1.avif";
+import vending2 from "../assets/projects/vending2.avif";
+import vending3 from "../assets/projects/vending3.avif";
+import voter1 from "../assets/projects/voter1.avif";
+import voter2 from "../assets/projects/voter2.avif";
+import voter3 from "../assets/projects/voter3.avif";
+import voter4 from "../assets/projects/voter4.avif";
+import sports1 from "../assets/projects/sports1.avif";
+import sports2 from "../assets/projects/sports2.avif";
+import sports3 from "../assets/projects/sports3.avif";
+import sports4 from "../assets/projects/sports4.avif";
+
+export const galleryImages = [
+  { id: 1, tittle: "house built", src: home3, category: "housing" },
+  { id: 2, tittle: "house built 2", src: home2, category: "housing" },
+  { id: 3, tittle: "school event", src: school3, category: "education" },
+  { id: 4, tittle: "school event 2", src: school4, category: "education" },
+  { id: 5, tittle: "health camp", src: health3, category: "health" },
+  { id: 6, tittle: "health camp 2", src: health4, category: "health" },
+  { id: 7, tittle: "tree plantation", src: green3, category: "environment" },
+  { id: 8, tittle: "tree plantation 2", src: green4, category: "environment" },
+  {
+    id: 9,
+    tittle: "voter awareness",
+    src: voter2,
+    category: "civic awareness",
+  },
+  {
+    id: 10,
+    tittle: "voter awareness 2",
+    src: voter4,
+    category: "civic awareness",
+  },
+  { id: 11, tittle: "sports event", src: sports2, category: "sports" },
+  { id: 12, tittle: "sports event 2", src: sports4, category: "sports" },
+];
+
+export const broadGalleryImages = [
+  home1,
+  home3,
+  school2,
+  green1,
+  green2,
+  voter3,
+];
 
 export const projectsList = [
   {
@@ -66,7 +111,6 @@ export const projectsList = [
     district: "Mangan",
     year: 2023,
   },
-
   {
     id: "school-support",
     title: "School Support",
@@ -92,7 +136,6 @@ export const projectsList = [
     year: 2022,
     img: "/placeholder/school.jpg",
   },
-
   {
     id: "health-camps",
     title: "Health Camps & Awareness",
@@ -116,7 +159,6 @@ export const projectsList = [
     year: 2021,
     img: "/placeholder/health-camp.jpg",
   },
-
   {
     id: "tree-plantation",
     title: "Tree Plantation Drives",
@@ -161,7 +203,6 @@ export const projectsList = [
     district: "Namchi",
     year: 2025,
   },
-
   {
     id: "sanitary-vending-machines",
     title: "Sanitary Vending Machine Support",
@@ -170,7 +211,7 @@ export const projectsList = [
       "To improve menstrual hygiene and reduce absenteeism, YES Foundation sponsored and installed sanitary vending machines in government schools and colleges. Awareness sessions were conducted alongside installations.",
     short:
       "Installing sanitary vending machines in schools and colleges to promote menstrual hygiene.",
-    gallery: [""],
+    gallery: [vending1, vending2, vending3],
     partners: ["Education Department", "Local Schools"],
     timeline: [
       { date: "May 2024", note: "Sikkim Government College, Namchi" },
@@ -185,30 +226,6 @@ export const projectsList = [
     district: "Namchi",
     year: 2024,
   },
-
-  {
-    id: "painting-awareness",
-    title: "Painting & Awareness Programmes",
-    subtitle: "Learning through creativity",
-    description:
-      "Creative competitions combined with awareness sessions were conducted in schools to encourage expression, confidence and civic awareness among students. These programs promote holistic learning beyond textbooks.",
-    short:
-      "School-level painting competitions combined with social awareness sessions.",
-    gallery: [""],
-    partners: ["Govt. JHS Gom", "Teachers & Volunteers"],
-    timeline: [
-      { date: "Apr 2024", note: "Painting competition at Govt. JHS Gom" },
-    ],
-    impact: [
-      { metric: "Students participated", value: "200+" },
-      { metric: "Schools covered", value: "1" },
-    ],
-    category: "Education",
-    location: "Gom, Namchi",
-    district: "Namchi",
-    year: 2024,
-  },
-
   {
     id: "voters-awareness",
     title: "Voters Awareness Campaign",
@@ -217,7 +234,7 @@ export const projectsList = [
       "YES Foundation conducted voter awareness programs in schools to educate young citizens on democratic values, voting rights and responsibilities. The initiative encourages informed participation in elections.",
     short:
       "Educating students on voting rights, democracy and civic responsibility.",
-    gallery: [""],
+    gallery: [voter4, voter1, voter2, voter3],
     partners: ["Election Department", "Govt. Schools"],
     timeline: [{ date: "Apr 2024", note: "National Voters Day celebration" }],
     impact: [
@@ -229,47 +246,6 @@ export const projectsList = [
     district: "Namchi",
     year: 2024,
   },
-
-  {
-    id: "financial-medical-aid",
-    title: "Medical & Financial Assistance",
-    subtitle: "Standing with families in crisis",
-    description:
-      "YES Foundation provided direct financial assistance to patients and families facing medical emergencies. Support was extended across constituencies to reduce treatment burden and ensure timely care.",
-    short:
-      "Providing direct financial aid to patients facing medical emergencies.",
-    gallery: [""],
-    partners: ["Local Communities"],
-    timeline: [
-      { date: "Apr–May 2024", note: "Aid distributed across Namchi districts" },
-    ],
-    impact: [{ metric: "Patients supported", value: "4+" }],
-    category: "Health",
-    location: "Namchi District",
-    district: "Namchi",
-    year: 2024,
-  },
-
-  {
-    id: "youth-skill-development",
-    title: "Youth Skill & Leadership Development",
-    subtitle: "Preparing youth for the future",
-    description:
-      "Through workshops, mentorship and leadership opportunities, YES Foundation empowers youth with employability skills, financial literacy and social responsibility.",
-    short:
-      "Workshops, mentorship and leadership programs for youth empowerment.",
-    gallery: [""],
-    partners: ["Youth Volunteers", "Local Leaders"],
-    timeline: [
-      { date: "2023–2025", note: "Ongoing youth empowerment initiatives" },
-    ],
-    impact: [{ metric: "Youth engaged", value: "500+" }],
-    category: "Youth Empowerment",
-    location: "Multiple locations",
-    district: "Statewide",
-    year: 2025,
-  },
-
   {
     id: "sports-material-support",
     title: "Sports Material Sponsorship",
@@ -277,7 +253,7 @@ export const projectsList = [
     description:
       "To promote sports culture and physical well-being, YES Foundation sponsored sports equipment for youth in rural areas, encouraging teamwork, discipline and healthy lifestyles.",
     short: "Providing sports materials to promote youth fitness and talent.",
-    gallery: [""],
+    gallery: [sports1, sports2, sports3, sports4],
     partners: ["Local Youth Clubs"],
     timeline: [{ date: "Mar 2025", note: "Distribution at Assangthang" }],
     impact: [{ metric: "Youth benefited", value: "100+" }],
