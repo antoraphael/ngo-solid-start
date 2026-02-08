@@ -1,14 +1,14 @@
 // src/main.tsx
-import "@solid-devtools/debugger/setup";
+// import "@solid-devtools/debugger/setup";
 import "./index.css";
 import { render } from "solid-js/web";
 import { Router } from "@solidjs/router";
 import App from "./App";
-import { attachDebugger } from "@solid-devtools/debugger";
+// import { attachDebugger } from "@solid-devtools/debugger";
 
-if (import.meta.env.DEV) {
-  attachDebugger();
-}
+// if (import.meta.env.DEV) {
+//   attachDebugger();
+// }
 
 render(
   () => (
