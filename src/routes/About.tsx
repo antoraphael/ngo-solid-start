@@ -1,5 +1,5 @@
 // src/routes/About.tsx
-import { createSignal, onCleanup, onMount, Show, For } from "solid-js";
+import { createSignal, onCleanup, onMount, For } from "solid-js";
 import { A } from "@solidjs/router";
 import { ORG, EXECUTIVES } from "../lib/content";
 import ImageWithFallback from "../components/Home/ImageWithFallBack";
@@ -12,7 +12,7 @@ import { PRESS } from "../lib/content";
 export default function About() {
   const [visibleIntro, setVisibleIntro] = createSignal(false);
   const [, setVisibleStats] = createSignal(false);
-  const [timelineVisible, setTimelineVisible] = createSignal(false);
+  // const [timelineVisible, setTimelineVisible] = createSignal(false);
 
   let introEl!: HTMLDivElement;
   let statsEl!: HTMLDivElement;
@@ -21,7 +21,7 @@ export default function About() {
   let quoteTimer: number | undefined;
   onMount(() => {
     // Observe intro section
-    const t3 = setTimeout(() => setTimelineVisible(true), 520);
+    // const t3 = setTimeout(() => setTimelineVisible(true), 520);
     // rotate quotes every 4s
     if (PRESS.quotes && PRESS.quotes.length > 1) {
       quoteTimer = setInterval(() => {

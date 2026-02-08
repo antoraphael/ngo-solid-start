@@ -5,7 +5,6 @@ import {
   onMount,
   onCleanup,
   For,
-  Show,
 } from "solid-js";
 import { A } from "@solidjs/router";
 import { PRESS } from "../lib/content";
