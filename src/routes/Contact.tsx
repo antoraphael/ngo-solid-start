@@ -1,21 +1,24 @@
 // src/routes/Contact.tsx
 import { onMount, createSignal } from "solid-js";
-import { ORG } from "../lib/content";
-import emailjs from "emailjs-com";
 import Cookies from "js-cookie";
+import { ORG } from "../lib/content";
 
 export default function Contact() {
   const [name, setName] = createSignal("");
   const [email, setEmail] = createSignal("");
   const [message, setMessage] = createSignal("");
   const [error, setError] = createSignal<string | null>(null);
-  const [sent, setSent] = createSignal(Cookies.get("enquirySent") === "true");
+  const [sending, setSending] = createSignal(false);
+
+  // check if enquiry already sent (persisted via cookie)
+  const [sent, setSent] = createSignal(Cookies.get("contact_sent") === "true");
 
   let nameInput!: HTMLInputElement;
 
   onMount(() => {
-    // focus name field on mount
-    if (nameInput) nameInput.focus();
+    if (nameInput && !sent()) {
+      nameInput.focus();
+    }
   });
 
   function validateEmail(email: string) {
@@ -31,33 +34,44 @@ export default function Contact() {
       nameInput.focus();
       return;
     }
+
     if (!email().trim() || !validateEmail(email())) {
       setError("Please enter a valid email address.");
       return;
     }
+
     if (!message().trim()) {
-      setError("Please enter a message.");
+      setError("Please enter your message.");
       return;
     }
 
     try {
-      // ⚡ EmailJS (replace YOUR_ IDs with actual values from emailjs.com)
-      await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        {
-          from_name: name(),
-          reply_to: email(),
-          message: message(),
-        },
-        "YOUR_PUBLIC_KEY"
-      );
+      setSending(true);
 
-      Cookies.set("enquirySent", "true", { expires: 1 }); // expire in 1 day
+      const res = await fetch("/.netlify/functions/send-mail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name(),
+          email: email(),
+          message: message(),
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      // store cookie for 1 day
+      Cookies.set("contact_sent", "true", { expires: 1 });
       setSent(true);
     } catch (err) {
       console.error(err);
-      setError("Failed to send message. Please try again later.");
+      setError(
+        "Something went wrong while sending your message. Please try again later.",
+      );
+    } finally {
+      setSending(false);
     }
   }
 
@@ -70,37 +84,44 @@ export default function Contact() {
         <div>
           <p class="mb-2">
             Email:{" "}
-            <a href={`mailto:${ORG.contact.email}`} class="text-brand">
+            <a
+              href={`mailto:${ORG.contact.email}`}
+              class="text-brand underline"
+            >
               {ORG.contact.email}
             </a>
           </p>
+
           <p class="mb-2">
             Phone:{" "}
-            <a href={`tel:${ORG.contact.phone}`} class="text-brand">
+            <a href={`tel:${ORG.contact.phone}`} class="text-brand underline">
               {ORG.contact.phone}
             </a>
           </p>
+
           <p class="mt-4 text-sm text-gray-600">
             For media, events, volunteering, and partnerships, please reach out
-            via email.
+            using this form or via email.
           </p>
         </div>
 
-        {/* Conditional form / sent message */}
+        {/* Form / Success Message */}
         <div>
           {sent() ? (
-            <div class="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
               <h2 class="text-2xl font-semibold text-green-700 mb-2">
-                ✅ Enquiry Sent
+                ✅ Message Sent Successfully
               </h2>
               <p class="text-gray-700">
-                Thank you for reaching out! Our team will get back to you
-                shortly via email.
+                Thank you for contacting us!
+                <br />
+                Our team has received your message and will get back to you
+                shortly.
               </p>
             </div>
           ) : (
             <form
-              class="bg-white shadow-md rounded-lg p-6 border"
+              class="bg-white shadow-md rounded-xl p-6 border"
               onSubmit={handleSubmit}
             >
               {error() && (
@@ -135,9 +156,10 @@ export default function Contact() {
 
               <button
                 type="submit"
-                class="bg-brand text-white px-6 py-2 rounded-lg shadow hover:bg-brand-dark transition"
+                disabled={sending()}
+                class="bg-brand text-white px-6 py-2 rounded-lg shadow hover:bg-brand-dark transition disabled:opacity-50"
               >
-                Send Message
+                {sending() ? "Sending..." : "Send Message"}
               </button>
             </form>
           )}

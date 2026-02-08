@@ -303,7 +303,7 @@ export const ORG = {
     "YES FOUNDATION, established on August 20, 2021, brings hope and positive change to many lives through housing, health camps, education support, and youth empowerment.",
   contact: {
     email: "yesfoundationsikkim@gmail.com",
-    phone: "6297273900",
+    phone: "+91 6297273900",
   },
 };
 

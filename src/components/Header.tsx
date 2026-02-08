@@ -11,8 +11,8 @@ export default function Header() {
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
     { name: "Gallery", href: "/gallery" },
-    { name: "Events", href: "/events" },
-    { name: "Press", href: "/press" },
+    // { name: "Events", href: "/events" },
+    { name: "Blogs", href: "/blogs" },
     // { name: "Team", href: "/team" },
     { name: "Contact", href: "/contact" },
   ];
@@ -59,7 +59,7 @@ export default function Header() {
               classList={{
                 "transition-colors text-brand hover:text-accent": !isActiveLink(
                   ele.href,
-                  ele.end
+                  ele.end,
                 ),
                 "font-semibold text-accent underline underline-offset-4":
                   isActiveLink(ele.href, ele.end),
@@ -97,7 +97,7 @@ export default function Header() {
                 classList={{
                   "text-brand hover:text-accent": !isActiveLink(
                     ele.href,
-                    ele.end
+                    ele.end,
                   ),
                   "font-semibold text-accent underline underline-offset-4":
                     isActiveLink(ele.href, ele.end),

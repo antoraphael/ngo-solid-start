@@ -10,9 +10,9 @@ import ProjectDetail from "./routes/ProjectDetail";
 import Gallery from "./routes/Gallery";
 import Contact from "./routes/Contact";
 import NotFound from "./routes/NotFound";
-import Events from "./routes/Event";
-import EventDetail from "./routes/EventDetails";
-import Press from "./routes/Press";
+// import Events from "./routes/Event";
+// import EventDetail from "./routes/EventDetails";
+import Press from "./routes/Blogs";
 import Team from "./components/Team";
 import Donate from "./routes/Donate";
 import BlogDetail from "./routes/BlogDetails";
@@ -37,9 +37,9 @@ export default function App() {
         <Route path="projects/:id" component={ProjectDetail} />
         <Route path="gallery" component={Gallery} />
         <Route path="contact" component={Contact} />
-        <Route path="events" component={Events} />
-        <Route path="events/:id" component={EventDetail} />
-        <Route path="press" component={Press} />
+        {/* <Route path="events" component={Events} />
+        <Route path="events/:id" component={EventDetail} /> */}
+        <Route path="blogs" component={Press} />
         <Route path="/blogs/:slug" component={BlogDetail} />
         <Route path="team" component={Team} />
         <Route path="donate" component={Donate} />
