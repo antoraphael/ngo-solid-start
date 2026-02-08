@@ -34,12 +34,14 @@ const blogList: Blog[] = Object.entries(blogModules).map(([path, raw]) => {
   const parsed = fm<BlogFrontmatter>(raw as string);
 
   const slug = path.split("/").pop()!.replace(".md", "");
-
-  return {
+  let res = {
     slug,
     body: parsed.body,
     ...parsed.attributes,
   };
+  console.log("res===>", res);
+
+  return res;
 });
 
 export default function Blogs() {
@@ -138,7 +140,11 @@ export default function Blogs() {
               >
                 <div class="w-36 flex-shrink-0">
                   <ImageWithFallback
-                    src={r.img ?? "/placeholder/press-2.jpg"}
+                    src={
+                      r.cover && r.cover.trim() !== ""
+                        ? r.cover
+                        : "/placeholder/press-2.jpg"
+                    }
                     alt={r.title}
                     class="w-full h-24 object-cover rounded"
                   />

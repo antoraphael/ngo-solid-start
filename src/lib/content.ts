@@ -632,6 +632,7 @@ export interface BlogFrontmatter {
   excerpt?: string;
   source?: string;
   img?: string;
+  cover?: string;
   url?: string;
 }
 export interface BlogMarkdownModule {
