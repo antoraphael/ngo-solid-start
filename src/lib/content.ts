@@ -20,6 +20,249 @@ import wwd_health from "../assets/home/wwd_health.avif";
 import wwd_education from "../assets/home/wwd_education.avif";
 import wwd_community from "../assets/home/wwd_community.avif";
 import wwd_youth from "../assets/home/wwd_youth.avif";
+import home1 from "../assets/projects/home1.avif";
+import home2 from "../assets/projects/home2.avif";
+import home3 from "../assets/projects/home3.avif";
+import home4 from "../assets/projects/home4.avif";
+import school1 from "../assets/projects/school1.avif";
+import school2 from "../assets/projects/school2.avif";
+import school3 from "../assets/projects/school3.avif";
+import school4 from "../assets/projects/school4.avif";
+import health1 from "../assets/projects/health1.avif";
+import health2 from "../assets/projects/health2.avif";
+import health3 from "../assets/projects/health3.avif";
+import health4 from "../assets/projects/health4.avif";
+import green1 from "../assets/projects/green1.avif";
+import green2 from "../assets/projects/green2.avif";
+import green3 from "../assets/projects/green3.avif";
+import green4 from "../assets/projects/green4.avif";
+import vending1 from "../assets/projects/vending1.avif";
+import vending2 from "../assets/projects/vending2.avif";
+import vending3 from "../assets/projects/vending3.avif";
+import voter1 from "../assets/projects/voter1.avif";
+import voter2 from "../assets/projects/voter2.avif";
+import voter3 from "../assets/projects/voter3.avif";
+import voter4 from "../assets/projects/voter4.avif";
+import sports1 from "../assets/projects/sports1.avif";
+import sports2 from "../assets/projects/sports2.avif";
+import sports3 from "../assets/projects/sports3.avif";
+import sports4 from "../assets/projects/sports4.avif";
+
+export const galleryImages = [
+  { id: 1, tittle: "house built", src: home3, category: "housing" },
+  { id: 2, tittle: "house built 2", src: home2, category: "housing" },
+  { id: 3, tittle: "school event", src: school3, category: "education" },
+  { id: 4, tittle: "school event 2", src: school4, category: "education" },
+  { id: 5, tittle: "health camp", src: health3, category: "health" },
+  { id: 6, tittle: "health camp 2", src: health4, category: "health" },
+  { id: 7, tittle: "tree plantation", src: green3, category: "environment" },
+  { id: 8, tittle: "tree plantation 2", src: green4, category: "environment" },
+  {
+    id: 9,
+    tittle: "voter awareness",
+    src: voter2,
+    category: "civic awareness",
+  },
+  {
+    id: 10,
+    tittle: "voter awareness 2",
+    src: voter4,
+    category: "civic awareness",
+  },
+  { id: 11, tittle: "sports event", src: sports2, category: "sports" },
+  { id: 12, tittle: "sports event 2", src: sports4, category: "sports" },
+];
+
+export const broadGalleryImages = [
+  home1,
+  home3,
+  school2,
+  green1,
+  green2,
+  voter3,
+];
+
+export const projectsList = [
+  {
+    id: "house-building",
+    title: "House Building",
+    subtitle: "Safe homes for vulnerable families",
+    description:
+      "Working closely with local leaders and masons, YES Foundation constructs durable, weather-resistant homes for families who previously lived in unsafe structures. The project emphasizes local materials, thermal efficiency and involvement of the household in building decisions.",
+    short:
+      "Constructing safe, climate-resilient houses for vulnerable families across remote Sikkim villages.",
+    gallery: [home1, home2, home3, home4],
+    partners: ["Local Panchayat", "District Social Welfare"],
+    timeline: [
+      { date: "Jan 2022", note: "Community selection & baseline survey" },
+      { date: "Mar 2022", note: "Material mobilisation & training" },
+      {
+        date: "Aug 2022",
+        note: "Construction completed for Phase 1 (10 houses)",
+      },
+      { date: "Dec 2023", note: "Phase 2 completed (11 houses)" },
+    ],
+    impact: [
+      { metric: "Families housed", value: "21" },
+      { metric: "Lives improved", value: "100+" },
+    ],
+    category: "Housing",
+    location: "Mangan & East Sikkim",
+    district: "Mangan",
+    year: 2023,
+  },
+  {
+    id: "school-support",
+    title: "School Support",
+    subtitle: "Better facilities, better learning",
+    description:
+      "We upgrade classroom infrastructure, provide learning materials and train teachers in active learning pedagogy. The goal is to reduce dropouts and improve learning outcomes in remote schools.",
+    short:
+      "Improving rural school facilities, providing learning materials and teacher training to increase retention.",
+    gallery: [school1, school2, school3, school4],
+    partners: ["District Education Office", "Local NGOs"],
+    timeline: [
+      { date: "Jul 2021", note: "Needs assessment & stakeholder workshops" },
+      { date: "Sep 2021", note: "Material & furniture distribution" },
+      { date: "Mar 2022", note: "Teacher training workshops" },
+    ],
+    impact: [
+      { metric: "Schools supported", value: "8" },
+      { metric: "Students reached", value: "1,200+" },
+    ],
+    category: "Education",
+    location: "Rural Gangtok",
+    district: "Gangtok",
+    year: 2022,
+    img: "/placeholder/school.jpg",
+  },
+  {
+    id: "health-camps",
+    title: "Health Camps & Awareness",
+    subtitle: "Accessible healthcare outreach",
+    description:
+      "Periodic camps bring screenings, basic treatment and health education to villages with limited access to health facilities. Camps include maternal & child health messaging and referrals when needed.",
+    short:
+      "Regular health camps offering screenings, basic treatment and health education in remote communities.",
+    gallery: [health2, health1, health3, health4],
+    partners: ["Local Health Department"],
+    timeline: [
+      { date: "2021–2024", note: "Ongoing periodic camps across districts" },
+    ],
+    impact: [
+      { metric: "Camps held", value: "200+" },
+      { metric: "People screened", value: "10,000+" },
+    ],
+    category: "Health",
+    location: "Multiple districts",
+    district: "Statewide",
+    year: 2021,
+    img: "/placeholder/health-camp.jpg",
+  },
+  {
+    id: "tree-plantation",
+    title: "Tree Plantation Drives",
+    subtitle: "Restoring local ecology",
+    description:
+      "Working with community groups to plant native saplings, improve soil and protect watersheds. Each drive is accompanied by training on sapling care.",
+    short:
+      "Community-driven tree-planting and watershed protection projects to restore local ecology.",
+    gallery: [green1, green2, green3, green4],
+    partners: ["Forest Department", "Youth Volunteers"],
+    timeline: [{ date: "2023", note: "Large-scale drives in South Sikkim" }],
+    impact: [{ metric: "Saplings planted", value: "160+" }],
+    category: "Environment",
+    location: "Community forests, South Sikkim",
+    district: "South Sikkim",
+    year: 2024,
+    img: "/placeholder/trees.jpg",
+  },
+  {
+    id: "blood-donation",
+    title: "Voluntary Blood Donation",
+    subtitle: "Saving lives through community participation",
+    description:
+      "YES Foundation organizes voluntary blood donation camps in collaboration with government hospitals to strengthen emergency healthcare systems. The initiative promotes awareness, encourages youth participation and supports patients in critical need.",
+    short:
+      "Organizing voluntary blood donation camps to support hospitals and save lives.",
+    gallery: [health1, health2, health3, health4],
+    partners: ["Namchi District Hospital", "STNM Hospital"],
+    timeline: [
+      { date: "2023–2025", note: "Multiple camps across Namchi & Gangtok" },
+      {
+        date: "Feb 2025",
+        note: "Camp held on Hon’ble CM Shri Prem Singh Golay’s birthday",
+      },
+    ],
+    impact: [
+      { metric: "Camps conducted", value: "3+" },
+      { metric: "Donors participated", value: "98+" },
+    ],
+    category: "Health",
+    location: "Namchi & Gangtok",
+    district: "Namchi",
+    year: 2025,
+  },
+  {
+    id: "sanitary-vending-machines",
+    title: "Sanitary Vending Machine Support",
+    subtitle: "Dignity and health for young girls",
+    description:
+      "To improve menstrual hygiene and reduce absenteeism, YES Foundation sponsored and installed sanitary vending machines in government schools and colleges. Awareness sessions were conducted alongside installations.",
+    short:
+      "Installing sanitary vending machines in schools and colleges to promote menstrual hygiene.",
+    gallery: [vending1, vending2, vending3],
+    partners: ["Education Department", "Local Schools"],
+    timeline: [
+      { date: "May 2024", note: "Sikkim Government College, Namchi" },
+      { date: "Oct 2024", note: "Govt. SSS, Nandugaon" },
+    ],
+    impact: [
+      { metric: "Institutions supported", value: "2" },
+      { metric: "Girls benefited", value: "500+" },
+    ],
+    category: "Education",
+    location: "Namchi",
+    district: "Namchi",
+    year: 2024,
+  },
+  {
+    id: "voters-awareness",
+    title: "Voters Awareness Campaign",
+    subtitle: "Building informed future citizens",
+    description:
+      "YES Foundation conducted voter awareness programs in schools to educate young citizens on democratic values, voting rights and responsibilities. The initiative encourages informed participation in elections.",
+    short:
+      "Educating students on voting rights, democracy and civic responsibility.",
+    gallery: [voter4, voter1, voter2, voter3],
+    partners: ["Election Department", "Govt. Schools"],
+    timeline: [{ date: "Apr 2024", note: "National Voters Day celebration" }],
+    impact: [
+      { metric: "Students reached", value: "300+" },
+      { metric: "Institutions covered", value: "1" },
+    ],
+    category: "Civic Awareness",
+    location: "Nandugaon, Namchi",
+    district: "Namchi",
+    year: 2024,
+  },
+  {
+    id: "sports-material-support",
+    title: "Sports Material Sponsorship",
+    subtitle: "Encouraging fitness and teamwork",
+    description:
+      "To promote sports culture and physical well-being, YES Foundation sponsored sports equipment for youth in rural areas, encouraging teamwork, discipline and healthy lifestyles.",
+    short: "Providing sports materials to promote youth fitness and talent.",
+    gallery: [sports1, sports2, sports3, sports4],
+    partners: ["Local Youth Clubs"],
+    timeline: [{ date: "Mar 2025", note: "Distribution at Assangthang" }],
+    impact: [{ metric: "Youth benefited", value: "100+" }],
+    category: "Sports",
+    location: "Assangthang",
+    district: "Namchi",
+    year: 2025,
+  },
+];
 
 export const whatWeDoItems = [
   {
@@ -60,7 +303,7 @@ export const ORG = {
     "YES FOUNDATION, established on August 20, 2021, brings hope and positive change to many lives through housing, health camps, education support, and youth empowerment.",
   contact: {
     email: "yesfoundationsikkim@gmail.com",
-    phone: "6297273900",
+    phone: "+91 6297273900",
   },
 };
 
