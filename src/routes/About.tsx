@@ -55,7 +55,7 @@ export default function About() {
     onCleanup(() => {
       introObs.disconnect();
       statsObs.disconnect();
-      clearTimeout(t3);
+      // clearTimeout(t3);
       if (quoteTimer) clearInterval(quoteTimer);
     });
   });
