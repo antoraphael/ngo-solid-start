@@ -97,7 +97,7 @@ export default function Blogs() {
               href="/contact"
               class="inline-block px-4 py-2 rounded-md border border-brand text-brand hover:bg-brand hover:text-white transition"
             >
-              Contact Press Office
+              Contact Us
             </A>
           </div>
         </div>

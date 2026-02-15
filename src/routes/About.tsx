@@ -8,6 +8,7 @@ import houseBeforeImg from "../assets/home/house_before.avif";
 import houseAfterImg from "../assets/home/house_after.avif";
 import houseProjectImg from "../assets/home/house_new.avif";
 import { PRESS } from "../lib/content";
+import person from "../assets/common/person.png";
 
 export default function About() {
   const [visibleIntro, setVisibleIntro] = createSignal(false);
@@ -117,7 +118,7 @@ export default function About() {
                   Our Projects
                 </A>
                 <A
-                  href="/get-involved"
+                  href="/contact"
                   class="px-5 py-2 rounded-md border border-brand text-brand font-medium hover:bg-brand hover:text-white transition"
                 >
                   Get Involved
@@ -280,7 +281,7 @@ export default function About() {
             </div>
 
             <ImageWithFallback
-              src={PRESS.quotes?.[quoteIdx()]?.img}
+              src={person}
               class="w-36 h-36 rounded-full object-cover"
             />
           </div>
@@ -329,7 +330,7 @@ export default function About() {
       </section>
 
       {/* Footer */}
-      <footer class="bg-white shadow-sm py-6">
+      {/* <footer class="bg-white shadow-sm py-6">
         <div class="container mx-auto px-6 md:px-12 flex justify-between">
           <div>
             <h4 class="font-semibold">Press Office</h4>
@@ -341,7 +342,7 @@ export default function About() {
             </a>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </main>
   );
 }

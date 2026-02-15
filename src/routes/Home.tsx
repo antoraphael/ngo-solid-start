@@ -33,7 +33,7 @@ export default function Home() {
         </p>
         <div class="flex justify-center gap-4">
           <A
-            href="/volunteer"
+            href="/contact?from=volunteer"
             class="bg-white text-brand px-6 py-3 rounded-lg shadow hover:bg-brand hover:text-white transition"
           >
             Volunteer

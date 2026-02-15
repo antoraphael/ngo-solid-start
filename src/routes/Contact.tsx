@@ -1,9 +1,11 @@
-// src/routes/Contact.tsx
-import { onMount, createSignal } from "solid-js";
+import { onMount, createSignal, createEffect } from "solid-js";
+import { useSearchParams } from "@solidjs/router";
 import Cookies from "js-cookie";
 import { ORG } from "../lib/content";
 
 export default function Contact() {
+  const [searchParams] = useSearchParams();
+
   const [name, setName] = createSignal("");
   const [email, setEmail] = createSignal("");
   const [message, setMessage] = createSignal("");
@@ -18,6 +20,15 @@ export default function Contact() {
   onMount(() => {
     if (nameInput && !sent()) {
       nameInput.focus();
+    }
+  });
+
+  // ✅ Reactively detect volunteer entry (works even on same page)
+  createEffect(() => {
+    if (searchParams.from === "volunteer" && !message().trim()) {
+      setMessage(
+        "Hello, I would like to volunteer with your organisation. Please let me know the next steps.",
+      );
     }
   });
 

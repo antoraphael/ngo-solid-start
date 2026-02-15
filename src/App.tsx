@@ -16,6 +16,8 @@ import Press from "./routes/Blogs";
 import Team from "./components/Team";
 import Donate from "./routes/Donate";
 import BlogDetail from "./routes/BlogDetails";
+import Terms from "./routes/Terms";
+import Policies from "./routes/PrivacyPolicy";
 
 function Layout(props: RouteSectionProps) {
   return (
@@ -43,6 +45,8 @@ export default function App() {
         <Route path="/blogs/:slug" component={BlogDetail} />
         <Route path="team" component={Team} />
         <Route path="donate" component={Donate} />
+        <Route path="terms" component={Terms} />
+        <Route path="policies" component={Policies} />
         <Route path="*" component={NotFound} />
       </Route>
     </>

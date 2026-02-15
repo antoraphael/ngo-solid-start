@@ -4,7 +4,7 @@ date: "2026-02-05"
 author: "Field Operations Team"
 excerpt: "Our free health camp provided medical support to over 300 people in remote villages."
 source: "Community Outreach"
-img: "/uploads/health-camp.jpg"
+cover: /uploads/health2.avif
 url: ""
 ---
 

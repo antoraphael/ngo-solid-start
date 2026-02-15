@@ -9,70 +9,65 @@ export default function Footer() {
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
     { name: "Gallery", href: "/gallery" },
-    { name: "Events", href: "/events" },
-    { name: "Team", href: "/team" },
     { name: "Contact", href: "/contact" },
     { name: "Donate", href: "/donate" },
   ];
 
   const involvementLinks = [
-    { name: "Volunteer", href: "/get-involved#volunteer" },
-    { name: "Partner With Us", href: "/get-involved#partner" },
-    { name: "Careers", href: "/careers" },
+    { name: "Volunteer", href: "/contact?from=volunteer" },
     { name: "Donate", href: "/donate" },
   ];
 
   const socials = [
     {
       name: "Facebook",
-      href: "https://facebook.com/yesfoundationsikkim",
+      href: "https://www.facebook.com/share/1FYZpShjpf/",
       img: "/icons/facebook.svg",
     },
     {
-      name: "Twitter",
-      href: "https://twitter.com/yesfoundationsikkim",
-      img: "/icons/twitter.svg",
-    },
-    {
       name: "Instagram",
-      href: "https://instagram.com/yesfoundationsikkim",
+      href: "https://www.instagram.com/yesfoundationsikkim?igsh=MjN0b2NtOXkxOXVx",
       img: "/icons/instagram.svg",
-    },
-    {
-      name: "LinkedIn",
-      href: "https://linkedin.com/company/yesfoundationsikkim",
-      img: "/icons/linkedin.svg",
     },
   ];
 
   return (
     <footer class="bg-brand-light text-gray-800">
+      {/* Main footer */}
       <div class="container mx-auto px-6 md:px-12 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
-          {/* About NGO */}
-          <div class="md:col-span-3">
-            <A href="/" class="inline-block">
-              <h2 class="text-xl font-bold text-gray-900">YES Foundation</h2>
+        <div class="grid grid-cols-1 gap-12 md:grid-cols-12">
+          {/* About */}
+          <div class="md:col-span-4">
+            <A href="/" class="inline-block group">
+              <h2 class="text-xl font-bold text-gray-900 group-hover:text-accent transition-colors">
+                YES Foundation
+              </h2>
             </A>
-            <p class="mt-3 text-sm text-gray-700 leading-relaxed">
+
+            <p class="mt-4 text-sm text-gray-700 leading-relaxed max-w-sm">
               Empowering youth and communities in Sikkim through education,
               health, environment, and grassroots development initiatives.
             </p>
 
-            {/* Social icons */}
-            <div class="mt-4 flex gap-3">
+            {/* Socials */}
+            <div class="mt-6 flex gap-4">
               {socials.map((s) => (
                 <a
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.name}
-                  class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:text-accent hover:border-accent transition"
+                  class="
+                    group w-11 h-11 flex items-center justify-center
+                    rounded-full border border-gray-300
+                    transition-all duration-300
+                    hover:border-accent hover:shadow-md hover:-translate-y-1
+                  "
                 >
                   <img
                     src={s.img}
                     alt={s.name}
-                    class="w-5 h-5"
+                    class="w-5 h-5 opacity-70 group-hover:opacity-100 transition"
                     loading="lazy"
                   />
                 </a>
@@ -82,13 +77,19 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div class="md:col-span-3">
-            <h4 class="text-base font-semibold text-gray-900 mb-4">
-              Quick Links
-            </h4>
-            <ul class="space-y-2 text-sm text-gray-700">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="mt-4 space-y-3 text-sm">
               {quickLinks.map((l) => (
                 <li>
-                  <A href={l.href} class="hover:text-accent transition">
+                  <A
+                    href={l.href}
+                    class="
+                      group inline-flex items-center gap-2
+                      text-gray-700 transition-all duration-200
+                      hover:text-accent hover:translate-x-1
+                    "
+                  >
+                    <span class="w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-3" />
                     {l.name}
                   </A>
                 </li>
@@ -98,13 +99,19 @@ export default function Footer() {
 
           {/* Get Involved */}
           <div class="md:col-span-3">
-            <h4 class="text-base font-semibold text-gray-900 mb-4">
-              Get Involved
-            </h4>
-            <ul class="space-y-2 text-sm text-gray-700">
+            <h4 class="footer-title">Get Involved</h4>
+            <ul class="mt-4 space-y-3 text-sm">
               {involvementLinks.map((l) => (
                 <li>
-                  <A href={l.href} class="hover:text-accent transition">
+                  <A
+                    href={l.href}
+                    class="
+                      group inline-flex items-center gap-2
+                      text-gray-700 transition-all duration-200
+                      hover:text-accent hover:translate-x-1
+                    "
+                  >
+                    <span class="w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-3" />
                     {l.name}
                   </A>
                 </li>
@@ -113,39 +120,44 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div class="md:col-span-3">
-            <h4 class="text-base font-semibold text-gray-900 mb-4">Contact</h4>
-            <p class="text-sm text-gray-700">
-              Email:{" "}
-              <a
-                class="text-brand hover:underline"
-                href="mailto:yesfoundationsikkim@gmail.com"
-              >
-                yesfoundationsikkim@gmail.com
-              </a>
-            </p>
-            <p class="text-sm text-gray-700 mt-1">
-              Phone:{" "}
-              <a class="text-brand hover:underline" href="tel:+916297273900">
-                +91 62972 73900
-              </a>
-            </p>
-            <p class="text-sm text-gray-700 mt-3">
-              Office: Gangtok, Sikkim, India
-            </p>
+          <div class="md:col-span-2">
+            <h4 class="footer-title">Contact</h4>
+
+            <div class="mt-4 space-y-2 text-sm text-gray-700">
+              <p>
+                <span class="font-medium">Email:</span>{" "}
+                <a
+                  class="text-brand hover:text-accent transition"
+                  href="mailto:yesfoundationsikkim@gmail.com"
+                >
+                  yesfoundationsikkim@gmail.com
+                </a>
+              </p>
+              <p>
+                <span class="font-medium">Phone:</span>{" "}
+                <a
+                  class="text-brand hover:text-accent transition"
+                  href="tel:+916297273900"
+                >
+                  +91 62972 73900
+                </a>
+              </p>
+              <p class="pt-2">Gangtok, Sikkim, India</p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div class="bg-white border-t border-gray-200 py-4">
-        <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+      {/* Bottom bar */}
+      <div class="bg-white border-t border-gray-200">
+        <div class="container mx-auto px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-600">
           <p>© {year} YES Foundation — All rights reserved.</p>
-          <div class="flex gap-4 mt-3 md:mt-0">
-            <A href="/privacy" class="hover:text-accent">
+
+          <div class="flex gap-6">
+            <A href="/policies" class="hover:text-accent transition-colors">
               Privacy Policy
             </A>
-            <A href="/terms" class="hover:text-accent">
+            <A href="/terms" class="hover:text-accent transition-colors">
               Terms of Service
             </A>
           </div>

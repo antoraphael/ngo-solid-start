@@ -4,7 +4,7 @@ date: "2026-01-15"
 author: "NGO Team"
 excerpt: "We successfully completed our first major outreach program and impacted over 500 families."
 source: "NGO Press Release"
-img: "/uploads/ngo-milestone.jpg"
+cover: /uploads/voter3.avif
 url: ""
 ---
 
