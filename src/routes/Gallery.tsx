@@ -7,7 +7,9 @@ import { broadGalleryImages } from "../lib/content";
 export default function Gallery() {
   return (
     <section class="container mx-auto px-4 py-12">
-      <h1 class="text-3xl font-bold mb-6">Gallery</h1>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand mb-3">
+        Gallery
+      </h1>
 
       <div class="mb-6">
         <p class="text-gray-600">
