@@ -1,5 +1,6 @@
 import { createSignal, createEffect, onCleanup } from "solid-js";
 import { A, useLocation } from "@solidjs/router";
+import Logo from "./Logo";
 
 const HEADER_HEIGHT = "4rem"; // h-16
 
@@ -35,9 +36,11 @@ export default function Header() {
       {/* HEADER */}
       <header class="sticky top-0 z-50 bg-brand-light border-b border-brand/20">
         <div class="h-16 px-4 flex items-center justify-between">
-          <A href="/" class="text-2xl font-bold text-brand">
+          {/* <A href="/" class="text-2xl font-bold text-brand">
             YES Foundation Sikkim
-          </A>
+          </A> */}
+
+          <Logo />
 
           {/* DESKTOP NAV */}
           <nav class="hidden md:flex gap-8 items-center">
