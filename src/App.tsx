@@ -18,6 +18,7 @@ import Donate from "./routes/Donate";
 import BlogDetail from "./routes/BlogDetails";
 import Terms from "./routes/Terms";
 import Policies from "./routes/PrivacyPolicy";
+import StaticContact from "./routes/StaticContact";
 
 function Layout(props: RouteSectionProps) {
   return (
@@ -38,7 +39,8 @@ export default function App() {
         <Route path="projects" component={Projects} />
         <Route path="projects/:id" component={ProjectDetail} />
         <Route path="gallery" component={Gallery} />
-        <Route path="contact" component={Contact} />
+        <Route path="contact" component={StaticContact} />
+        {/* <Route path="contact" component={Contact} /> */}
         {/* <Route path="events" component={Events} />
         <Route path="events/:id" component={EventDetail} /> */}
         <Route path="blogs" component={Press} />

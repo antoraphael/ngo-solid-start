@@ -37,12 +37,22 @@ const config: Config = {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-6px)" },
+        },
+        softPulse: {
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(0,0,0,0)" },
+          "50%": { boxShadow: "0 10px 30px rgba(0,0,0,0.15)" },
+        },
       },
       animation: {
         header: "headerIn 0.7s ease-out forwards",
         image: "imageIn 0.9s ease-out forwards",
         content: "contentIn 1s ease-out forwards",
         fade: "fade 0.5s ease-out",
+        float: "float 6s ease-in-out infinite",
+        "soft-pulse": "softPulse 2.5s ease-in-out infinite",
       },
     },
   },

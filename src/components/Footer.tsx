@@ -142,7 +142,7 @@ export default function Footer() {
                   +91 62972 73900
                 </a>
               </p>
-              <p class="pt-2">Gangtok, Sikkim, India</p>
+              <p class="pt-2">Namchi, South Sikkim, India</p>
             </div>
           </div>
         </div>

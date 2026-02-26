@@ -42,3 +42,12 @@ body {
 .animate-slide-in {
   animation: slide-in 0.25s ease-out forwards;
 }
+
+.icon-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease;
+}
+
+.group:hover .icon-tilt {
+  transform: perspective(700px) rotateX(12deg) rotateY(-12deg) translateY(-2px);
+}

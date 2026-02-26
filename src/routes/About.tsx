@@ -130,7 +130,7 @@ export default function About() {
               <div class="rounded-lg overflow-hidden shadow-md">
                 <ImageWithFallback
                   src={founderImg}
-                  alt="YES Foundation - community"
+                  alt="YES Foundation Sikkim - community"
                   class="w-full h-56 object-cover"
                 />
               </div>

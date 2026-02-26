@@ -19,16 +19,16 @@ export default function Terms() {
 
       <div class="space-y-8 text-gray-700 leading-relaxed animate-slide-up">
         <p>
-          Welcome to the YES Foundation website. By accessing or using this
-          website, you agree to comply with and be bound by the following Terms
-          and Conditions.
+          Welcome to the YES Foundation Sikkim website. By accessing or using
+          this website, you agree to comply with and be bound by the following
+          Terms and Conditions.
         </p>
 
         <section>
-          <h2 class="policy-title">About YES Foundation</h2>
+          <h2 class="policy-title">About YES Foundation Sikkim</h2>
           <p>
-            YES Foundation is a non-profit organization working towards youth
-            empowerment and community development in Sikkim, India.
+            YES Foundation Sikkim is a non-profit organization working towards
+            youth empowerment and community development in Sikkim, India.
           </p>
         </section>
 
@@ -45,8 +45,8 @@ export default function Terms() {
           <h2 class="policy-title">Donations</h2>
           <p>
             Donations made through this website may be processed via third-party
-            payment platforms. YES Foundation is not responsible for issues
-            arising from external payment services.
+            payment platforms. YES Foundation Sikkim is not responsible for
+            issues arising from external payment services.
           </p>
         </section>
 
@@ -54,8 +54,8 @@ export default function Terms() {
           <h2 class="policy-title">Intellectual Property</h2>
           <p>
             All content on this website, including text, images, and logos, is
-            the property of YES Foundation unless otherwise stated. You may not
-            reproduce or distribute content without permission.
+            the property of YES Foundation Sikkim unless otherwise stated. You
+            may not reproduce or distribute content without permission.
           </p>
         </section>
 
@@ -80,9 +80,9 @@ export default function Terms() {
         <section>
           <h2 class="policy-title">Changes to These Terms</h2>
           <p>
-            YES Foundation may update these Terms & Conditions at any time.
-            Continued use of the website indicates acceptance of the updated
-            terms.
+            YES Foundation Sikkim may update these Terms & Conditions at any
+            time. Continued use of the website indicates acceptance of the
+            updated terms.
           </p>
         </section>
 

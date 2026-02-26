@@ -36,7 +36,7 @@ export default function Header() {
       <header class="sticky top-0 z-50 bg-brand-light border-b border-brand/20">
         <div class="h-16 px-4 flex items-center justify-between">
           <A href="/" class="text-2xl font-bold text-brand">
-            YES Foundation
+            YES Foundation Sikkim
           </A>
 
           {/* DESKTOP NAV */}

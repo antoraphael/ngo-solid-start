@@ -3,11 +3,11 @@ import { createSignal, createEffect, onCleanup, onMount } from "solid-js";
 
 const voices = [
   {
-    text: `“Thanks to YES Foundation, our village now has access to clean drinking water and regular health awareness programs. They truly care about people.”`,
+    text: `“Thanks to YES Foundation Sikkim Sikkim, our village now has access to clean drinking water and regular health awareness programs. They truly care about people.”`,
     author: "Local Beneficiary",
   },
   {
-    text: `“Volunteering with YES Foundation has been life-changing. I learned, contributed, and grew as a person while serving communities.”`,
+    text: `“Volunteering with YES Foundation Sikkim has been life-changing. I learned, contributed, and grew as a person while serving communities.”`,
     author: "Youth Volunteer",
   },
   {
@@ -19,7 +19,7 @@ const voices = [
     author: "Community Elder",
   },
   {
-    text: `“YES Foundation inspires young people like me to stay in Sikkim and build change at home.”`,
+    text: `“YES Foundation Sikkim inspires young people like me to stay in Sikkim and build change at home.”`,
     author: "College Student",
   },
 ];
@@ -161,7 +161,7 @@ export default function Voices() {
         <div class="mt-6 flex items-center justify-center gap-2">
           {Array.from(
             { length: Math.max(1, voices.length - (slidesPerView() - 1)) },
-            (_, i) => i
+            (_, i) => i,
           ).map((i) => (
             <button
               class={`w-3 h-3 rounded-full ${

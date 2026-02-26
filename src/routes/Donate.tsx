@@ -7,7 +7,7 @@ export default function Donate() {
       <div class="max-w-3xl mx-auto px-6">
         <div class="text-center">
           <h1 class="text-4xl md:text-5xl font-extrabold text-brand mb-4">
-            Support YES Foundation
+            Support YES Foundation Sikkim
           </h1>
 
           <p class="text-lg text-gray-700 mb-6">
