@@ -4,7 +4,7 @@ import { A } from "@solidjs/router";
 const TEXT = "YES Foundation Sikkim";
 
 export default function Logo() {
-  const [hovered, setHovered] = createSignal(false);
+  const [setHovered] = createSignal(false);
 
   let letters: HTMLSpanElement[] = [];
 
