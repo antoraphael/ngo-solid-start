@@ -8,7 +8,7 @@ import About from "./routes/About";
 import Projects from "./routes/Projects";
 import ProjectDetail from "./routes/ProjectDetail";
 import Gallery from "./routes/Gallery";
-import Contact from "./routes/Contact";
+// import Contact from "./routes/Contact";
 import NotFound from "./routes/NotFound";
 // import Events from "./routes/Event";
 // import EventDetail from "./routes/EventDetails";
