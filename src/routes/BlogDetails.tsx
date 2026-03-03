@@ -75,7 +75,7 @@ export default function BlogDetails() {
           </h1>
 
           <p class="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            {blog()!.excerpt}
+            {blog()!.sub}
           </p>
         </header>
 
@@ -110,7 +110,7 @@ export default function BlogDetails() {
             prose-h3:mt-10
             prose-strong:text-foreground"
           >
-            <div innerHTML={markdownToHtml(blog()!.body)} />
+            <div innerHTML={markdownToHtml(blog()!.excerpt ?? "")} />
           </div>
 
           {/* Divider */}

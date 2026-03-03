@@ -8,7 +8,7 @@ import {
 } from "solid-js";
 import { A } from "@solidjs/router";
 import { PRESS } from "../lib/content";
-import type { Blog, BlogFrontmatter } from "../lib/content";
+import type { BlogFrontmatter, Blog } from "../lib/blogs";
 import ImageWithFallback from "../components/Home/ImageWithFallBack";
 import fm from "front-matter";
 
@@ -165,9 +165,7 @@ export default function Blogs() {
                     </div>
                   </div>
 
-                  <p class="text-sm text-gray-700 mt-3 line-clamp-3">
-                    {r.excerpt}
-                  </p>
+                  <p class="text-sm text-gray-700 mt-3 line-clamp-3">{r.sub}</p>
 
                   <div class="mt-3">
                     <A

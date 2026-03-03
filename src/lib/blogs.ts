@@ -6,6 +6,7 @@ export interface BlogFrontmatter {
   author: string;
   excerpt?: string;
   source?: string;
+  sub?: string;
   cover?: string;
   url?: string;
 }

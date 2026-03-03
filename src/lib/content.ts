@@ -47,6 +47,7 @@ import sports1 from "../assets/projects/sports1.avif";
 import sports2 from "../assets/projects/sports2.avif";
 import sports3 from "../assets/projects/sports3.avif";
 import sports4 from "../assets/projects/sports4.avif";
+import type { BlogFrontmatter } from "./blogs";
 
 export const galleryImages = [
   { id: 1, tittle: "house built", src: home3, category: "housing" },
@@ -625,16 +626,6 @@ export const PRESS = {
   ],
 };
 
-export interface BlogFrontmatter {
-  title: string;
-  date: string;
-  author?: string;
-  excerpt?: string;
-  source?: string;
-  img?: string;
-  cover?: string;
-  url?: string;
-}
 export interface BlogMarkdownModule {
   frontmatter: BlogFrontmatter;
   default: string;
